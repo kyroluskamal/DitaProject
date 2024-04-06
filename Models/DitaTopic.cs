@@ -16,7 +16,7 @@ namespace AppConfgDocumentation.Models
     }
     public abstract class DitatopicVersion : CommonModel
     {
-        public string ShortDescription { get; set; } = string.Empty;
+        public string? ShortDescription { get; set; } = string.Empty;
         public string XmlContent { get; set; } = string.Empty;
         public string FileName { get; set; } = string.Empty;
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;

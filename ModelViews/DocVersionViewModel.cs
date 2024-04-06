@@ -7,11 +7,9 @@ namespace AppConfgDocumentation.ModelViews
     {
         [Required]
         public string VersionNumber { get; set; } = string.Empty;
-        public string DitaMapXml { get; set; } = string.Empty;
-
-        public string DitaMapFilePath { get; set; } = string.Empty;
         [Required]
         public int DocumentId { get; set; }
     }
 
+    public record DocVersionUpdateViewModel([Required] string VersionNumber);
 }

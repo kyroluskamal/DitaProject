@@ -163,6 +163,37 @@ namespace AppConfgDocumentation.Controllers
             }
         }
 
+        //get DitaTopicVersion by Id
+        [HttpGet("version/{id}")]
+        public async Task<IActionResult> GetDitaTopicVersionById(int id)
+        {
+            var version = await _context.DitatopicVersions
+                        .Include(x => x.DitaTopic)
+                        .ThenInclude(x => x.Document)
+                        .Select(dv => new
+                        {
+                            dv.Id,
+                            dv.ShortDescription,
+                            dv.FileName,
+                            dv.VersionNumber,
+                            dv.CreatedAt,
+                            dv.XmlContent,
+                            dv.DitaTopicId,
+                            Type = dv is ConceptVersion ? 0 : dv is TaskVersion ? 1 : -1,
+                            body = dv is ConceptVersion ? ((ConceptVersion)dv).Body : null,
+                            steps = dv is TaskVersion ? ((TaskVersion)dv).Steps.Select(s => new
+                            {
+                                s.Id,
+                                s.Order,
+                                s.Command,
+                                s.TaskVersionId
+                            }) : null
+                        }).FirstOrDefaultAsync(x => x.Id == id);
+            if (version == null)
+                return NotFound(new { message = $"DITA topic version with ID {id} not found" });
+            return Ok(version);
+        }
+
         //add Version to DitaTopic
         [HttpPost("version")]
 
@@ -237,7 +268,36 @@ namespace AppConfgDocumentation.Controllers
             }
         }
 
-
+        //get all version of a DitaTopic
+        [HttpGet("{id}/versions")]
+        public async Task<IActionResult> GetDitaTopicVersions(int id)
+        {
+            var versions = await _context.DitatopicVersions
+                        .Include(x => x.DitaTopic)
+                        .ThenInclude(x => x.Document)
+                        .Select(dv => new
+                        {
+                            dv.Id,
+                            dv.ShortDescription,
+                            dv.FileName,
+                            dv.VersionNumber,
+                            dv.CreatedAt,
+                            dv.XmlContent,
+                            dv.DitaTopicId,
+                            Type = dv is ConceptVersion ? 0 : dv is TaskVersion ? 1 : -1,
+                            body = dv is ConceptVersion ? ((ConceptVersion)dv).Body : null,
+                            steps = dv is TaskVersion ? ((TaskVersion)dv).Steps.Select(s => new
+                            {
+                                s.Id,
+                                s.Order,
+                                s.Command,
+                                s.TaskVersionId
+                            }) : null
+                        }).Where(x => x.DitaTopicId == id).ToListAsync();
+            if (versions == null)
+                return NotFound(new { message = $"DITA topic with ID {id} not found" });
+            return Ok(versions);
+        }
         private async Task<ReturnTypeOfDitaToics> AddUpdateDitaTopicAndVersions(DitaTopicModelView topic, GetDitaObject ditaObject, bool isUpdate = false)
         {
             var result = new ReturnTypeOfDitaToics();

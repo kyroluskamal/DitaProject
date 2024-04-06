@@ -1,23 +1,16 @@
-using System;
 using System.Diagnostics;
-using System.Security.AccessControl;
-using System.Security.Principal;
-using System.Threading.Tasks;
 using AppConfgDocumentation.Data;
 using AppConfgDocumentation.Models;
 using AppConfgDocumentation.ModelViews;
 using AppConfgDocumentation.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System.IO;
 using AppConfgDocumentation.enms;
-using Microsoft.AspNetCore.Identity.Data;
 
 namespace AppConfgDocumentation.Controllers
 {
     public class Documents : Controller_Base
     {
-
         private readonly ApplicationDbContext _dbContext;
         private readonly IWebHostEnvironment _hostingEnvironment;
         private readonly IDitaFileCreationService _ditaFileCreationService;
@@ -78,15 +71,15 @@ namespace AppConfgDocumentation.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateDocument([FromRoute] int id, [FromBody] string title)
+        public async Task<IActionResult> UpdateDocument([FromRoute] int id, [FromBody] DocumentUpdateViewModel documentViewModel)
         {
             try
             {
                 Documento? doc = await _dbContext.Documentos.FirstOrDefaultAsync(x => x.Id == id);
                 if (doc == null) return NotFound(new { message = "Document not found" });
 
-                doc.Title = title;
-                doc.FolderName = _ditaFileCreationService.RenameFolder(oldFileName: doc.FolderName, newFolderName: $"{title}_id{doc.Id}");
+                doc.Title = documentViewModel.Title;
+                doc.FolderName = _ditaFileCreationService.RenameFolder(oldFileName: doc.FolderName, newFolderName: $"{documentViewModel.Title}_id{doc.Id}");
 
                 await _dbContext.SaveChangesAsync();
                 return Ok(new { message = "Document is updated successfully.", data = doc });
@@ -147,9 +140,16 @@ namespace AppConfgDocumentation.Controllers
             }
         }
 
+        //get all versions of a document
+        [HttpGet("{id}/versions")]
+        public async Task<IActionResult> GetVersions([FromRoute] int id)
+        {
+            var docVersions = await _dbContext.DocVersions.Include(x => x.DitatopicVersions).ThenInclude(c => c.DitatopicVersion).Where(x => x.DocumentId == id).ToListAsync();
+            return Ok(docVersions);
+        }
         //update DocVersion
         [HttpPut("{id}/versions/{versionId}")]
-        public async Task<IActionResult> UpdateVersion([FromRoute] int id, [FromRoute] int versionId, [FromBody] DocVersionViewModel version)
+        public async Task<IActionResult> UpdateVersion([FromRoute] int id, [FromRoute] int versionId, [FromBody] DocVersionUpdateViewModel version)
         {
             try
             {
