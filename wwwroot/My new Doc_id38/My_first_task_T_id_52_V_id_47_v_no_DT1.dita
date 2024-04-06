@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+                <!DOCTYPE task PUBLIC '-//OASIS//DTD DITA Task//EN' '../dtd/task.dtd'>
+                <task id='MyfirsttaskDT1'>
+                    <title>My first task</title>
+                    <shortdesc>fdfsdfsdfsdfsfsdfdsfdfdsffsdfsdfsdfsd</shortdesc>
+                    <taskbody>
+                        <steps><step>
+                    <cmd>Begin by using the Sqitch init command to start a new project.</cmd>
+                </step><step>
+                    <cmd>Specify the database engine that Sqitch will manage by using the --engine option to configure it correctly from the beginning.</cmd>
+                </step><step>
+                    <cmd>Initiate a project named "widgets" to manage PostgreSQL databases.</cmd>
+                </step><step>
+                    <cmd>Beg4242342342342in by using the Sqitch init command to start a new project.</cmd>
+                </step><step>
+                    <cmd>Specify the data423423342base engine that Sqitch will manage by using the --engine option to configure it correctly from the beginning.</cmd>
+                </step><step>
+                    <cmd>Initiate a proj42342343243242342234234234233423423432423ect named "widgets" to manage PostgreSQL databases.</cmd>
+                </step></steps>
+                    </taskbody>
+                </task>
+            

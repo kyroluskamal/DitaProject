@@ -1,0 +1,117 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\IDDprojecct\\AppConfgDocumentation\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{EA3DAF86-628B-476D-AB56-B36269C778E8}|AppConfgDocumentation.csproj|d:\\iddprojecct\\appconfgdocumentation\\controllers\\documentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA3DAF86-628B-476D-AB56-B36269C778E8}|AppConfgDocumentation.csproj|solutionrelative:controllers\\documentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA3DAF86-628B-476D-AB56-B36269C778E8}|AppConfgDocumentation.csproj|d:\\iddprojecct\\appconfgdocumentation\\models\\ditatopic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA3DAF86-628B-476D-AB56-B36269C778E8}|AppConfgDocumentation.csproj|solutionrelative:models\\ditatopic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA3DAF86-628B-476D-AB56-B36269C778E8}|AppConfgDocumentation.csproj|d:\\iddprojecct\\appconfgdocumentation\\services\\ditavalidationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA3DAF86-628B-476D-AB56-B36269C778E8}|AppConfgDocumentation.csproj|solutionrelative:services\\ditavalidationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA3DAF86-628B-476D-AB56-B36269C778E8}|AppConfgDocumentation.csproj|d:\\iddprojecct\\appconfgdocumentation\\services\\ditafilecreationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA3DAF86-628B-476D-AB56-B36269C778E8}|AppConfgDocumentation.csproj|solutionrelative:services\\ditafilecreationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA3DAF86-628B-476D-AB56-B36269C778E8}|AppConfgDocumentation.csproj|d:\\iddprojecct\\appconfgdocumentation\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA3DAF86-628B-476D-AB56-B36269C778E8}|AppConfgDocumentation.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA3DAF86-628B-476D-AB56-B36269C778E8}|AppConfgDocumentation.csproj|d:\\iddprojecct\\appconfgdocumentation\\migrations\\20240402214428_addditafileurlinsections.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA3DAF86-628B-476D-AB56-B36269C778E8}|AppConfgDocumentation.csproj|solutionrelative:migrations\\20240402214428_addditafileurlinsections.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DitaTopic.cs",
+              "DocumentMoniker": "D:\\IDDprojecct\\AppConfgDocumentation\\Models\\DitaTopic.cs",
+              "RelativeDocumentMoniker": "Models\\DitaTopic.cs",
+              "ToolTip": "D:\\IDDprojecct\\AppConfgDocumentation\\Models\\DitaTopic.cs",
+              "RelativeToolTip": "Models\\DitaTopic.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAB4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-02T21:43:08.621Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DocumentsController.cs",
+              "DocumentMoniker": "D:\\IDDprojecct\\AppConfgDocumentation\\Controllers\\DocumentsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\DocumentsController.cs",
+              "ToolTip": "D:\\IDDprojecct\\AppConfgDocumentation\\Controllers\\DocumentsController.cs",
+              "RelativeToolTip": "Controllers\\DocumentsController.cs",
+              "ViewState": "AQIAADMAAAAAAAAAAAA1wEEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-02T18:23:42.84Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DitaFileCreationService.cs",
+              "DocumentMoniker": "D:\\IDDprojecct\\AppConfgDocumentation\\Services\\DitaFileCreationService.cs",
+              "RelativeDocumentMoniker": "Services\\DitaFileCreationService.cs",
+              "ToolTip": "D:\\IDDprojecct\\AppConfgDocumentation\\Services\\DitaFileCreationService.cs",
+              "RelativeToolTip": "Services\\DitaFileCreationService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-02T21:50:20.96Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DitaValidationService.cs",
+              "DocumentMoniker": "D:\\IDDprojecct\\AppConfgDocumentation\\Services\\DitaValidationService.cs",
+              "RelativeDocumentMoniker": "Services\\DitaValidationService.cs",
+              "ToolTip": "D:\\IDDprojecct\\AppConfgDocumentation\\Services\\DitaValidationService.cs",
+              "RelativeToolTip": "Services\\DitaValidationService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-02T21:50:59.478Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\IDDprojecct\\AppConfgDocumentation\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\IDDprojecct\\AppConfgDocumentation\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-02T21:51:32.541Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "20240402214428_AddDitaFileUrlInSections.cs",
+              "DocumentMoniker": "D:\\IDDprojecct\\AppConfgDocumentation\\Migrations\\20240402214428_AddDitaFileUrlInSections.cs",
+              "RelativeDocumentMoniker": "Migrations\\20240402214428_AddDitaFileUrlInSections.cs",
+              "ToolTip": "D:\\IDDprojecct\\AppConfgDocumentation\\Migrations\\20240402214428_AddDitaFileUrlInSections.cs",
+              "RelativeToolTip": "Migrations\\20240402214428_AddDitaFileUrlInSections.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAAwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-02T21:44:36.73Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,289 @@
+D:\IDD projecct\AppConfgDocumentation\obj\Debug\net8.0\AppConfgDocumentation.csproj.AssemblyReference.cache
+D:\IDD projecct\AppConfgDocumentation\obj\Debug\net8.0\AppConfgDocumentation.GeneratedMSBuildEditorConfig.editorconfig
+D:\IDD projecct\AppConfgDocumentation\obj\Debug\net8.0\AppConfgDocumentation.AssemblyInfoInputs.cache
+D:\IDD projecct\AppConfgDocumentation\obj\Debug\net8.0\AppConfgDocumentation.AssemblyInfo.cs
+D:\IDD projecct\AppConfgDocumentation\obj\Debug\net8.0\AppConfgDocumentation.csproj.CoreCompileInputs.cache
+D:\IDD projecct\AppConfgDocumentation\obj\Debug\net8.0\AppConfgDocumentation.MvcApplicationPartsAssemblyInfo.cs
+D:\IDD projecct\AppConfgDocumentation\obj\Debug\net8.0\AppConfgDocumentation.MvcApplicationPartsAssemblyInfo.cache
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\appsettings.Development.json
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\appsettings.json
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\AppConfgDocumentation.exe
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\AppConfgDocumentation.deps.json
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\AppConfgDocumentation.runtimeconfig.json
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\AppConfgDocumentation.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\AppConfgDocumentation.pdb
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\Azure.Core.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\Azure.Identity.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\Microsoft.Data.SqlClient.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\Microsoft.Identity.Client.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\Microsoft.OpenApi.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\System.Drawing.Common.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\System.Memory.Data.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\System.Runtime.Caching.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\System.Security.Permissions.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\System.Windows.Extensions.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+D:\IDD projecct\AppConfgDocumentation\obj\Debug\net8.0\staticwebassets.build.json
+D:\IDD projecct\AppConfgDocumentation\obj\Debug\net8.0\staticwebassets.development.json
+D:\IDD projecct\AppConfgDocumentation\obj\Debug\net8.0\staticwebassets\msbuild.AppConfgDocumentation.Microsoft.AspNetCore.StaticWebAssets.props
+D:\IDD projecct\AppConfgDocumentation\obj\Debug\net8.0\staticwebassets\msbuild.build.AppConfgDocumentation.props
+D:\IDD projecct\AppConfgDocumentation\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.AppConfgDocumentation.props
+D:\IDD projecct\AppConfgDocumentation\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.AppConfgDocumentation.props
+D:\IDD projecct\AppConfgDocumentation\obj\Debug\net8.0\staticwebassets.pack.json
+D:\IDD projecct\AppConfgDocumentation\obj\Debug\net8.0\scopedcss\bundle\AppConfgDocumentation.styles.css
+D:\IDD projecct\AppConfgDocumentation\obj\Debug\net8.0\AppConfg.848DDFA7.Up2Date
+D:\IDD projecct\AppConfgDocumentation\obj\Debug\net8.0\AppConfgDocumentation.dll
+D:\IDD projecct\AppConfgDocumentation\obj\Debug\net8.0\refint\AppConfgDocumentation.dll
+D:\IDD projecct\AppConfgDocumentation\obj\Debug\net8.0\AppConfgDocumentation.pdb
+D:\IDD projecct\AppConfgDocumentation\obj\Debug\net8.0\AppConfgDocumentation.genruntimeconfig.cache
+D:\IDD projecct\AppConfgDocumentation\obj\Debug\net8.0\ref\AppConfgDocumentation.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\Humanizer.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\Mono.TextTemplating.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\System.CodeDom.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\System.Composition.AttributedModel.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\System.Composition.Convention.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\System.Composition.Hosting.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\System.Composition.Runtime.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\System.Composition.TypedParts.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.resources.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.resources.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.resources.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.resources.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.resources.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.resources.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.resources.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.resources.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.resources.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.resources.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\IDD projecct\AppConfgDocumentation\bin\Debug\net8.0\AppConfgDocumentation.staticwebassets.runtime.json
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\appsettings.Development.json
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\appsettings.json
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\AppConfgDocumentation.staticwebassets.runtime.json
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\AppConfgDocumentation.exe
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\AppConfgDocumentation.deps.json
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\AppConfgDocumentation.runtimeconfig.json
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\AppConfgDocumentation.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\AppConfgDocumentation.pdb
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\Azure.Core.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\Azure.Identity.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\Humanizer.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\Microsoft.Data.SqlClient.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\Microsoft.Identity.Client.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\Microsoft.OpenApi.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\Mono.TextTemplating.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\System.CodeDom.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\System.Composition.AttributedModel.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\System.Composition.Convention.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\System.Composition.Hosting.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\System.Composition.Runtime.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\System.Composition.TypedParts.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\System.Drawing.Common.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\System.Memory.Data.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\System.Runtime.Caching.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\System.Security.Permissions.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\System.Windows.Extensions.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.resources.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.resources.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.resources.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.resources.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.resources.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.resources.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.resources.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.resources.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.resources.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.resources.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+D:\IDDprojecct\AppConfgDocumentation\obj\Debug\net8.0\AppConfgDocumentation.csproj.AssemblyReference.cache
+D:\IDDprojecct\AppConfgDocumentation\obj\Debug\net8.0\AppConfgDocumentation.GeneratedMSBuildEditorConfig.editorconfig
+D:\IDDprojecct\AppConfgDocumentation\obj\Debug\net8.0\AppConfgDocumentation.AssemblyInfoInputs.cache
+D:\IDDprojecct\AppConfgDocumentation\obj\Debug\net8.0\AppConfgDocumentation.AssemblyInfo.cs
+D:\IDDprojecct\AppConfgDocumentation\obj\Debug\net8.0\AppConfgDocumentation.csproj.CoreCompileInputs.cache
+D:\IDDprojecct\AppConfgDocumentation\obj\Debug\net8.0\AppConfgDocumentation.MvcApplicationPartsAssemblyInfo.cs
+D:\IDDprojecct\AppConfgDocumentation\obj\Debug\net8.0\AppConfgDocumentation.MvcApplicationPartsAssemblyInfo.cache
+D:\IDDprojecct\AppConfgDocumentation\obj\Debug\net8.0\staticwebassets.build.json
+D:\IDDprojecct\AppConfgDocumentation\obj\Debug\net8.0\staticwebassets.development.json
+D:\IDDprojecct\AppConfgDocumentation\obj\Debug\net8.0\staticwebassets\msbuild.AppConfgDocumentation.Microsoft.AspNetCore.StaticWebAssets.props
+D:\IDDprojecct\AppConfgDocumentation\obj\Debug\net8.0\staticwebassets\msbuild.build.AppConfgDocumentation.props
+D:\IDDprojecct\AppConfgDocumentation\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.AppConfgDocumentation.props
+D:\IDDprojecct\AppConfgDocumentation\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.AppConfgDocumentation.props
+D:\IDDprojecct\AppConfgDocumentation\obj\Debug\net8.0\staticwebassets.pack.json
+D:\IDDprojecct\AppConfgDocumentation\obj\Debug\net8.0\scopedcss\bundle\AppConfgDocumentation.styles.css
+D:\IDDprojecct\AppConfgDocumentation\obj\Debug\net8.0\AppConfg.848DDFA7.Up2Date
+D:\IDDprojecct\AppConfgDocumentation\obj\Debug\net8.0\AppConfgDocumentation.dll
+D:\IDDprojecct\AppConfgDocumentation\obj\Debug\net8.0\refint\AppConfgDocumentation.dll
+D:\IDDprojecct\AppConfgDocumentation\obj\Debug\net8.0\AppConfgDocumentation.pdb
+D:\IDDprojecct\AppConfgDocumentation\obj\Debug\net8.0\AppConfgDocumentation.genruntimeconfig.cache
+D:\IDDprojecct\AppConfgDocumentation\obj\Debug\net8.0\ref\AppConfgDocumentation.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\Scrutor.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\Swashbuckle.AspNetCore.Filters.dll
+D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll

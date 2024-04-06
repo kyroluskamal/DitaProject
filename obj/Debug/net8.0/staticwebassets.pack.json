@@ -1,0 +1,205 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\My new Doc_id38\\My_first_Describtion_T_id_51_V_id_46_v_no_DC1.dita",
+      "PackagePath": "staticwebassets\\My new Doc_id38\\My_first_Describtion_T_id_51_V_id_46_v_no_DC1.dita"
+    },
+    {
+      "Id": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\My new Doc_id38\\Updated_Title_2_T_id_51_V_id_46_v_no_DC1.dita",
+      "PackagePath": "staticwebassets\\My new Doc_id38\\Updated_Title_2_T_id_51_V_id_46_v_no_DC1.dita"
+    },
+    {
+      "Id": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\My new Doc_id38\\Updated_Title_T_id_51_V_id_46_v_no_DC1.dita",
+      "PackagePath": "staticwebassets\\My new Doc_id38\\Updated_Title_T_id_51_V_id_46_v_no_DC1.dita"
+    },
+    {
+      "Id": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\Sqitch-configuration_-_Hierarchical_engine_and_target_configuration_id37\\1.ditamap",
+      "PackagePath": "staticwebassets\\Sqitch-configuration_-_Hierarchical_engine_and_target_configuration_id37\\1.ditamap"
+    },
+    {
+      "Id": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\Sqitch-configuration_-_Hierarchical_engine_and_target_configuration_id37\\1\\1.pdf",
+      "PackagePath": "staticwebassets\\Sqitch-configuration_-_Hierarchical_engine_and_target_configuration_id37\\1\\1.pdf"
+    },
+    {
+      "Id": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\Sqitch-configuration_-_Hierarchical_engine_and_target_configuration_id37\\Discription_about_the_document_T_id_46_V_id_39_v_no_DC1.dita",
+      "PackagePath": "staticwebassets\\Sqitch-configuration_-_Hierarchical_engine_and_target_configuration_id37\\Discription_about_the_document_T_id_46_V_id_39_v_no_DC1.dita"
+    },
+    {
+      "Id": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\Sqitch-configuration_-_Hierarchical_engine_and_target_configuration_id37\\Discription_about_the_document_T_id_46_V_id_40_v_no_DC2.142342.dita",
+      "PackagePath": "staticwebassets\\Sqitch-configuration_-_Hierarchical_engine_and_target_configuration_id37\\Discription_about_the_document_T_id_46_V_id_40_v_no_DC2.142342.dita"
+    },
+    {
+      "Id": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\Sqitch-configuration_-_Hierarchical_engine_and_target_configuration_id37\\Project_Initialization_T_id_45_V_id_38_v_no_DT1.4342423432423432432432432432432432423432432.dita",
+      "PackagePath": "staticwebassets\\Sqitch-configuration_-_Hierarchical_engine_and_target_configuration_id37\\Project_Initialization_T_id_45_V_id_38_v_no_DT1.4342423432423432432432432432432432423432432.dita"
+    },
+    {
+      "Id": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\Sqitch-configuration_-_Hierarchical_engine_and_target_configuration_id37\\Project_Initialization_T_id_45_V_id_41_v_no_DT2.dita",
+      "PackagePath": "staticwebassets\\Sqitch-configuration_-_Hierarchical_engine_and_target_configuration_id37\\Project_Initialization_T_id_45_V_id_41_v_no_DT2.dita"
+    },
+    {
+      "Id": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\Sqitch-configuration_-_Hierarchical_engine_and_target_configuration_id37\\document2.ditamap",
+      "PackagePath": "staticwebassets\\Sqitch-configuration_-_Hierarchical_engine_and_target_configuration_id37\\document2.ditamap"
+    },
+    {
+      "Id": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\dtd\\bookmap.dtd",
+      "PackagePath": "staticwebassets\\dtd\\bookmap.dtd"
+    },
+    {
+      "Id": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\dtd\\bookmap.mod",
+      "PackagePath": "staticwebassets\\dtd\\bookmap.mod"
+    },
+    {
+      "Id": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\dtd\\commonElements.ent",
+      "PackagePath": "staticwebassets\\dtd\\commonElements.ent"
+    },
+    {
+      "Id": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\dtd\\commonElements.mod",
+      "PackagePath": "staticwebassets\\dtd\\commonElements.mod"
+    },
+    {
+      "Id": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\dtd\\concept.dtd",
+      "PackagePath": "staticwebassets\\dtd\\concept.dtd"
+    },
+    {
+      "Id": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\dtd\\concept.mod",
+      "PackagePath": "staticwebassets\\dtd\\concept.mod"
+    },
+    {
+      "Id": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\dtd\\ditabase.dtd",
+      "PackagePath": "staticwebassets\\dtd\\ditabase.dtd"
+    },
+    {
+      "Id": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\dtd\\glossary.dtd",
+      "PackagePath": "staticwebassets\\dtd\\glossary.dtd"
+    },
+    {
+      "Id": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\dtd\\glossary.mod",
+      "PackagePath": "staticwebassets\\dtd\\glossary.mod"
+    },
+    {
+      "Id": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\dtd\\highlightDomain.ent",
+      "PackagePath": "staticwebassets\\dtd\\highlightDomain.ent"
+    },
+    {
+      "Id": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\dtd\\highlightDomain.mod",
+      "PackagePath": "staticwebassets\\dtd\\highlightDomain.mod"
+    },
+    {
+      "Id": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\dtd\\indexingDomain.ent",
+      "PackagePath": "staticwebassets\\dtd\\indexingDomain.ent"
+    },
+    {
+      "Id": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\dtd\\indexingDomain.mod",
+      "PackagePath": "staticwebassets\\dtd\\indexingDomain.mod"
+    },
+    {
+      "Id": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\dtd\\map.dtd",
+      "PackagePath": "staticwebassets\\dtd\\map.dtd"
+    },
+    {
+      "Id": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\dtd\\map.mod",
+      "PackagePath": "staticwebassets\\dtd\\map.mod"
+    },
+    {
+      "Id": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\dtd\\mapGroup.ent",
+      "PackagePath": "staticwebassets\\dtd\\mapGroup.ent"
+    },
+    {
+      "Id": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\dtd\\mapGroup.mod",
+      "PackagePath": "staticwebassets\\dtd\\mapGroup.mod"
+    },
+    {
+      "Id": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\dtd\\metaDecl.mod",
+      "PackagePath": "staticwebassets\\dtd\\metaDecl.mod"
+    },
+    {
+      "Id": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\dtd\\programmingDomain.ent",
+      "PackagePath": "staticwebassets\\dtd\\programmingDomain.ent"
+    },
+    {
+      "Id": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\dtd\\programmingDomain.mod",
+      "PackagePath": "staticwebassets\\dtd\\programmingDomain.mod"
+    },
+    {
+      "Id": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\dtd\\reference.dtd",
+      "PackagePath": "staticwebassets\\dtd\\reference.dtd"
+    },
+    {
+      "Id": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\dtd\\reference.mod",
+      "PackagePath": "staticwebassets\\dtd\\reference.mod"
+    },
+    {
+      "Id": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\dtd\\softwareDomain.ent",
+      "PackagePath": "staticwebassets\\dtd\\softwareDomain.ent"
+    },
+    {
+      "Id": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\dtd\\softwareDomain.mod",
+      "PackagePath": "staticwebassets\\dtd\\softwareDomain.mod"
+    },
+    {
+      "Id": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\dtd\\task.dtd",
+      "PackagePath": "staticwebassets\\dtd\\task.dtd"
+    },
+    {
+      "Id": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\dtd\\task.mod",
+      "PackagePath": "staticwebassets\\dtd\\task.mod"
+    },
+    {
+      "Id": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\dtd\\tblDecl.mod",
+      "PackagePath": "staticwebassets\\dtd\\tblDecl.mod"
+    },
+    {
+      "Id": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\dtd\\topic.dtd",
+      "PackagePath": "staticwebassets\\dtd\\topic.dtd"
+    },
+    {
+      "Id": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\dtd\\topic.mod",
+      "PackagePath": "staticwebassets\\dtd\\topic.mod"
+    },
+    {
+      "Id": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\dtd\\topicDefn.ent",
+      "PackagePath": "staticwebassets\\dtd\\topicDefn.ent"
+    },
+    {
+      "Id": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\dtd\\uiDomain.ent",
+      "PackagePath": "staticwebassets\\dtd\\uiDomain.ent"
+    },
+    {
+      "Id": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\dtd\\uiDomain.mod",
+      "PackagePath": "staticwebassets\\dtd\\uiDomain.mod"
+    },
+    {
+      "Id": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\dtd\\utilitiesDomain.ent",
+      "PackagePath": "staticwebassets\\dtd\\utilitiesDomain.ent"
+    },
+    {
+      "Id": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\dtd\\utilitiesDomain.mod",
+      "PackagePath": "staticwebassets\\dtd\\utilitiesDomain.mod"
+    },
+    {
+      "Id": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\dtd\\xnalDomain.ent",
+      "PackagePath": "staticwebassets\\dtd\\xnalDomain.ent"
+    },
+    {
+      "Id": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\dtd\\xnalDomain.mod",
+      "PackagePath": "staticwebassets\\dtd\\xnalDomain.mod"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.AppConfgDocumentation.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.AppConfgDocumentation.props",
+      "PackagePath": "build\\AppConfgDocumentation.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.AppConfgDocumentation.props",
+      "PackagePath": "buildMultiTargeting\\AppConfgDocumentation.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.AppConfgDocumentation.props",
+      "PackagePath": "buildTransitive\\AppConfgDocumentation.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
