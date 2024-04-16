@@ -576,12 +576,12 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\dtd\xnalDomain.mod))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\My_new_Doc_id9\$fsdfsd_T_id_15_V_id_12_v_no_sdfsdf_.dita))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\My_new_Doc_id9\$fsdfsd_T_id_21_V_id_18_v_no_fsdfsdf_.dita))">
       <SourceType>Package</SourceType>
       <SourceId>AppConfgDocumentation</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/AppConfgDocumentation</BasePath>
-      <RelativePath>My_new_Doc_id9/$fsdfsd_T_id_15_V_id_12_v_no_sdfsdf_.dita</RelativePath>
+      <RelativePath>My_new_Doc_id9/$fsdfsd_T_id_21_V_id_18_v_no_fsdfsdf_.dita</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -590,7 +590,7 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\My_new_Doc_id9\$fsdfsd_T_id_15_V_id_12_v_no_sdfsdf_.dita))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\My_new_Doc_id9\$fsdfsd_T_id_21_V_id_18_v_no_fsdfsdf_.dita))</OriginalItemSpec>
     </StaticWebAsset>
   </ItemGroup>
 </Project>

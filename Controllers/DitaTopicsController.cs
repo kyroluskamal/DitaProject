@@ -457,7 +457,7 @@ namespace AppConfgDocumentation.Controllers
                     ShortDescription = ditaTopicModelView.ShortDescription,
                     VersionNumber = ditaTopicModelView.VersionNumber,
                     DitaTopicId = ditaTopicModelView.Id,
-                    Body = ditaTopicModelView.Body
+                    Body = ditaTopicModelView.Body,
                 };
 
             }
@@ -472,11 +472,12 @@ namespace AppConfgDocumentation.Controllers
                     {
                         Order = x.Order,
                         Command = x.Command
-                    }).ToList()
+                    }).ToList(),
                 };
 
                 version = taskVersion;
             }
+            version.Roles = ditaTopicModelView.Roles.Select(x => new DitaTopicVersionsRoles { RoleId = x }).ToList();
             await _context.DitatopicVersions.AddAsync(version);
 
             result.Code = await _context.SaveChangesAsync();

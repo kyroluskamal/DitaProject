@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Ria55nVhVew7x4dj3fVy4sAqYuFHCheq+arj7HzfRms=",
+  "Hash": "QLpptc29IM08aYuVppuk8QuUYLwohguL33W0RGVZhqM=",
   "Source": "AppConfgDocumentation",
   "BasePath": "_content/AppConfgDocumentation",
   "Mode": "Default",
@@ -701,12 +701,12 @@
       "OriginalItemSpec": "wwwroot\\dtd\\xnalDomain.mod"
     },
     {
-      "Identity": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\My_new_Doc_id9\\$fsdfsd_T_id_15_V_id_12_v_no_sdfsdf_.dita",
+      "Identity": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\My_new_Doc_id9\\$fsdfsd_T_id_21_V_id_18_v_no_fsdfsdf_.dita",
       "SourceId": "AppConfgDocumentation",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\",
       "BasePath": "_content/AppConfgDocumentation",
-      "RelativePath": "My_new_Doc_id9/$fsdfsd_T_id_15_V_id_12_v_no_sdfsdf_.dita",
+      "RelativePath": "My_new_Doc_id9/$fsdfsd_T_id_21_V_id_18_v_no_fsdfsdf_.dita",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -717,7 +717,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\My_new_Doc_id9\\$fsdfsd_T_id_15_V_id_12_v_no_sdfsdf_.dita"
+      "OriginalItemSpec": "wwwroot\\My_new_Doc_id9\\$fsdfsd_T_id_21_V_id_18_v_no_fsdfsdf_.dita"
     }
   ]
 }

@@ -33,7 +33,6 @@ namespace AppConfgDocumentation.Controllers
                 .ThenInclude(c => c.Roles)
                 .ThenInclude(c => c.Role)
                 .Include(x => x.DitaTopics)
-
                 .ThenInclude(c => c.DitatopicVersions)
                 .ThenInclude(c => c.Roles)
                 .ToListAsync();
@@ -48,6 +47,49 @@ namespace AppConfgDocumentation.Controllers
                 .ThenInclude(c => c.Role)
                 .Include(x => x.DitaTopics)
                 .ThenInclude(c => c.DitatopicVersions).ThenInclude(c => c.Roles)
+                .Select(x =>
+                    new
+                    {
+                        x.Id,
+                        x.Title,
+                        x.Author,
+                        DocVersions = x.DocVersions.Select(c => new DocVersion
+                        {
+                            Id = c.Id,
+                            VersionNumber = c.VersionNumber,
+                            DocumentId = c.DocumentId,
+                            DitatopicVersions = c.DitatopicVersions.Select(v => new DocVersionDitatopicVersion
+                            {
+                                DitatopicVersionId = v.DitatopicVersionId,
+                                DocVersionId = v.DocVersionId
+                            }).ToList(),
+                            Roles = c.Roles.Select(r => new DocVersionsRoles
+                            {
+                                DocVersionId = r.DocVersionId,
+
+                                RoleId = r.RoleId,
+                                Role = r.Role
+                            }).ToList()
+                        }).ToList(),
+                        DitaTopics = x.DitaTopics.Select(c => new
+                        {
+                            c.Id,
+                            c.Title,
+                            Type = c is Concept ? 0 : c is Tasks ? 1 : -1,
+                            DitatopicVersions = c.DitatopicVersions.Select(v => new
+                            {
+                                v.Id,
+                                v.VersionNumber,
+                                Type = v is ConceptVersion ? 0 : v is TaskVersion ? 1 : -1,
+                                v.ShortDescription,
+                                Roles = v.Roles.Select(r => r.RoleId).ToList(),
+                                v.DitaTopicId,
+                                Body = v is ConceptVersion ? (v as ConceptVersion).Body : v is ReferenceVersion ? (v as ReferenceVersion).Body : null,
+                                Steps = v is TaskVersion ? (v as TaskVersion).Steps : null
+                            }).ToList()
+                        }).ToList()
+                    }
+                )
                 .FirstOrDefaultAsync(x => x.Id == id);
             if (document == null) return NotFound(new { message = "Document not found" });
             return Ok(document);
