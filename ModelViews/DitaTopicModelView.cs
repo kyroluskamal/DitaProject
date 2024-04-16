@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using AppConfgDocumentation.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace AppConfgDocumentation.ModelViews
 {
@@ -15,10 +16,13 @@ namespace AppConfgDocumentation.ModelViews
         public int VersionId { get; set; }
         public string VersionNumber { get; set; } = string.Empty;
         public string Body { get; set; } = string.Empty;
+        [Required]
+        public ICollection<int> Roles { get; set; } = [];
         public ICollection<StepViewModel> Steps { get; set; } = [];
     }
 
-    public record DitaTopicUpdateViewModel([Required] string Title, int DocumentId, [Required] int Type);
+    public record DitaTopicUpdateViewModel([Required] string Title, int DocumentId, [Required] int Type, [Required]
+         ICollection<int> Roles);
 
 
     public class DitaTopicVersionViewModel : CommonModel
@@ -26,6 +30,8 @@ namespace AppConfgDocumentation.ModelViews
         public string ShortDescription { get; set; } = string.Empty;
         public int Type { get; set; }
         public int DitaTopicId { get; set; }
+        [Required]
+        public ICollection<int> Roles { get; set; } = [];
         public string VersionNumber { get; set; } = string.Empty;
         public string Body { get; set; } = string.Empty;
         public ICollection<StepViewModel> Steps { get; set; } = [];

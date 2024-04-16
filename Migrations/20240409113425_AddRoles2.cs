@@ -5,7 +5,7 @@
 namespace AppConfgDocumentation.Migrations
 {
     /// <inheritdoc />
-    public partial class Addvalidations : Migration
+    public partial class AddRoles2 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

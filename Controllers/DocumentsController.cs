@@ -6,6 +6,7 @@ using AppConfgDocumentation.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using AppConfgDocumentation.enms;
+using Microsoft.AspNetCore.Identity;
 
 namespace AppConfgDocumentation.Controllers
 {
@@ -14,20 +15,27 @@ namespace AppConfgDocumentation.Controllers
         private readonly ApplicationDbContext _dbContext;
         private readonly IWebHostEnvironment _hostingEnvironment;
         private readonly IDitaFileCreationService _ditaFileCreationService;
+
+        private readonly RoleManager<IdentityRole<int>> _roleManager;
         public Documents(ApplicationDbContext dbContext, IWebHostEnvironment hostingEnvironment,
-        IDitaFileCreationService ditaFileCreationService)
+        IDitaFileCreationService ditaFileCreationService, RoleManager<IdentityRole<int>> roleManager)
         {
             _dbContext = dbContext;
             _hostingEnvironment = hostingEnvironment;
             _ditaFileCreationService = ditaFileCreationService;
+            _roleManager = roleManager;
         }
 
         [HttpGet]
         public async Task<IActionResult> GetDocuments()
         {
             var documents = await _dbContext.Documentos.Include(f => f.Author).Include(x => x.DocVersions)
+                .ThenInclude(c => c.Roles)
+                .ThenInclude(c => c.Role)
                 .Include(x => x.DitaTopics)
+
                 .ThenInclude(c => c.DitatopicVersions)
+                .ThenInclude(c => c.Roles)
                 .ToListAsync();
             return Ok(documents);
         }
@@ -36,8 +44,10 @@ namespace AppConfgDocumentation.Controllers
         public async Task<IActionResult> GetDocument(int id)
         {
             var document = await _dbContext.Documentos.Include(f => f.Author).Include(x => x.DocVersions)
+             .ThenInclude(c => c.Roles)
+                .ThenInclude(c => c.Role)
                 .Include(x => x.DitaTopics)
-                .ThenInclude(c => c.DitatopicVersions)
+                .ThenInclude(c => c.DitatopicVersions).ThenInclude(c => c.Roles)
                 .FirstOrDefaultAsync(x => x.Id == id);
             if (document == null) return NotFound(new { message = "Document not found" });
             return Ok(document);
@@ -54,18 +64,19 @@ namespace AppConfgDocumentation.Controllers
             {
                 await _dbContext.Documentos.AddAsync(newDoc);
                 await _dbContext.SaveChangesAsync();
-                newDoc.FolderName = $"{document.Title}_id{newDoc.Id}";
+                newDoc.FolderName = _ditaFileCreationService.ReplaceInvalidChars($"{document.Title}_id{newDoc.Id}");
                 var newVersion = new DocVersion { VersionNumber = document.VersionNumber, DocumentId = newDoc.Id };
                 await _dbContext.DocVersions.AddAsync(newVersion);
                 await _dbContext.SaveChangesAsync();
-
-                _ditaFileCreationService.CreateFolderForDocument(newDoc.FolderName);
+                var result = await addDocVersionsRoles(newVersion.Id);
+                if (result > 0) _ditaFileCreationService.CreateFolderForDocument(newDoc.FolderName);
                 await transaction.CommitAsync();
 
                 return Ok(new { message = "Document is created successfully.", data = newDoc });
             }
             catch (Exception ex)
             {
+                transaction.Rollback();
                 return BadRequest(new { message = ex.Message, stackTrace = ex.StackTrace });
             }
         }
@@ -95,13 +106,29 @@ namespace AppConfgDocumentation.Controllers
         {
             try
             {
-                Documento? doc = await _dbContext.Documentos.FirstOrDefaultAsync(x => x.Id == id);
+                var transaction = await _dbContext.Database.BeginTransactionAsync();
+                Documento? doc = await _dbContext.Documentos.Include(x => x.DocVersions).ThenInclude(c => c.DitatopicVersions)
+                .Include(x => x.DocVersions).ThenInclude(c => c.Roles).Include(x => x.DocVersions).ThenInclude(c => c.DitaTopics)
+                .FirstOrDefaultAsync(x => x.Id == id);
+                int docId = doc.Id;
                 if (doc == null) return NotFound(new { message = "Document not found" });
                 string folderName = doc.FolderName;
+
+                List<DocVersionDitatopicVersion> ditatopicVersions = new();
+                List<DocVersionsRoles> docVersionsRoles = new();
+                foreach (var docVersion in doc.DocVersions)
+                {
+                    ditatopicVersions.AddRange(_dbContext.DocVersionDitatopicVersions.Where(x => x.DocVersionId == docVersion.Id));
+                    docVersionsRoles.AddRange(_dbContext.DocVersionsRoles.Where(x => x.DocVersionId == docVersion.Id));
+                }
+                _dbContext.DocVersionDitatopicVersions.RemoveRange(ditatopicVersions);
+                _dbContext.DocVersions.RemoveRange(doc.DocVersions);
                 _dbContext.Documentos.Remove(doc);
-                _ditaFileCreationService.DeleteDocumentFolder(folderName);
                 await _dbContext.SaveChangesAsync();
-                return Ok("Document is deleted successfully.");
+                await transaction.CommitAsync();
+                _ditaFileCreationService.DeleteDocumentFolder(folderName);
+
+                return Ok(new { message = "Document is deleted successfully.", data = docId });
             }
             catch (Exception ex)
             {
@@ -113,7 +140,8 @@ namespace AppConfgDocumentation.Controllers
         [HttpGet("{id}/versions/{versionId}")]
         public async Task<IActionResult> GetVersion([FromRoute] int id, [FromRoute] int versionId)
         {
-            var docVersion = await _dbContext.DocVersions.Include(x => x.Document).FirstOrDefaultAsync(x => x.Id == versionId && x.DocumentId == id);
+            var docVersion = await _dbContext.DocVersions.Include(x => x.Document).Include(x => x.Roles)
+            .Include(x => x.DitatopicVersions).FirstOrDefaultAsync(x => x.Id == versionId && x.DocumentId == id);
             if (docVersion == null) return NotFound(new { message = "Document version not found" });
             return Ok(docVersion);
         }
@@ -122,6 +150,7 @@ namespace AppConfgDocumentation.Controllers
         [HttpPost("{id}/versions")]
         public async Task<IActionResult> AddVersion([FromRoute] int id, [FromBody] DocVersionViewModel version)
         {
+            var transaction = await _dbContext.Database.BeginTransactionAsync();
             try
             {
                 if (!ModelState.IsValid) return BadRequest(ModelState);
@@ -132,10 +161,15 @@ namespace AppConfgDocumentation.Controllers
                 var newVersion = new DocVersion { VersionNumber = version.VersionNumber, DocumentId = doc.Id };
                 await _dbContext.DocVersions.AddAsync(newVersion);
                 await _dbContext.SaveChangesAsync();
-                return Ok(new { message = "Document Version is added successfully.", data = newVersion });
+                var result = await addDocVersionsRoles(newVersion.Id);
+                transaction.Commit();
+                if (result > 0)
+                    return Ok(new { message = "Document Version is added successfully.", data = newVersion });
+                return BadRequest(new { message = "Document Version is not added." });
             }
             catch (Exception ex)
             {
+                transaction.Rollback();
                 return BadRequest(new { message = ex.Message, stackTrace = ex.StackTrace });
             }
         }
@@ -183,7 +217,11 @@ namespace AppConfgDocumentation.Controllers
                 if (docVersion == null) return NotFound(new { message = "Version not found" });
 
                 _dbContext.DocVersions.Remove(docVersion);
-                await _dbContext.SaveChangesAsync();
+                var reslt = await _dbContext.SaveChangesAsync();
+                if (reslt > 0)
+                {
+                    _ditaFileCreationService.DeleteDocumentFolder($"{_hostingEnvironment.WebRootPath}{doc.FolderName}\\{docVersion.VersionNumber}");
+                }
                 return Ok("Document Version is deleted successfully.");
             }
             catch (Exception ex)
@@ -281,23 +319,25 @@ namespace AppConfgDocumentation.Controllers
 
 
         // create ditamap for doc version
-        [HttpPut("{id}/versions/{docVersionId}/ditamap")]
+        [HttpPut("ditamap")]
 
-        public async Task<IActionResult> CreateDitamap([FromRoute] int id, [FromRoute] int docVersionId)
+        public async Task<IActionResult> CreateDitamap([FromBody] DitamapViewModel ditamapInfo)
         {
             try
             {
-                Documento? doc = await _dbContext.Documentos.FirstOrDefaultAsync(x => x.Id == id);
+                Documento? doc = await _dbContext.Documentos.FirstOrDefaultAsync(x => x.Id == ditamapInfo.docId);
                 if (doc == null) return NotFound(new { message = "Document not found" });
 
 
-                DocVersion? docVersion = await _dbContext.DocVersions.FirstOrDefaultAsync(x => x.Id == docVersionId);
+                DocVersion? docVersion = await _dbContext.DocVersions.Include(x => x.DitatopicVersions).Include(c => c.Roles).FirstOrDefaultAsync(x => x.Id == ditamapInfo.docVersionId);
                 if (docVersion == null) return NotFound(new { message = "Version not found" });
 
-                docVersion.DitaMapXml = generateDitaMapXml(docVersion, doc);
+                var docVersionRole = _dbContext.DocVersionsRoles.Include(x => x.Role).FirstOrDefault(x => x.RoleId == ditamapInfo.RoleId && x.DocVersionId == docVersion.Id);
+                if (docVersionRole == null) return NotFound(new { message = "Role not found" });
+                docVersionRole.DitaMapXml = generateDitaMapXml(docVersion, doc, ditamapInfo.RoleId);
 
-                docVersion.DitaMapFilePath = _ditaFileCreationService.SaveDitaFile(docVersion.DitaMapXml, doc.FolderName, docVersion.VersionNumber,
-                DitaFileExtensions.ditamap);
+                docVersionRole.DitaMapFilePath = _ditaFileCreationService.SaveDitaFile(docVersionRole.DitaMapXml, doc.FolderName, docVersion.VersionNumber,
+                DitaFileExtensions.ditamap, docVersionRole.Role.Name);
                 await _dbContext.SaveChangesAsync();
                 return Ok(docVersion);
             }
@@ -309,21 +349,23 @@ namespace AppConfgDocumentation.Controllers
 
 
         [HttpPost("{id}/versions/{docVersionId}/ditamap")]
-        public async Task<IActionResult> GeneratePDF([FromRoute] int id, [FromRoute] int docVersionId)
+        public async Task<IActionResult> GeneratePDF([FromRoute] int id, [FromRoute] int docVersionId, [FromRoute] int RoleId)
         {
             var docV = await _dbContext.DocVersions.Include(x => x.Document).FirstOrDefaultAsync(x => x.Id == docVersionId && x.DocumentId == id);
             if (docV == null) return NotFound(new { message = "Document not found" });
+            var docVersionRole = _dbContext.DocVersionsRoles.Include(x => x.Role).FirstOrDefault(x => x.RoleId == RoleId && x.DocVersionId == docV.Id);
+            if (docVersionRole == null) return NotFound(new { message = "Role not found" });
             try
             {
                 var outputPdfPath = Path.Combine(_hostingEnvironment.WebRootPath, docV.Document.FolderName
                 , $"{docV.VersionNumber}");
-                var finalOutputPdfPath = $"{outputPdfPath}\\{docV.VersionNumber}.pdf";
+                var finalOutputPdfPath = $"{outputPdfPath}\\{docV.VersionNumber}_{docVersionRole.Role.Name}.pdf";
                 var relativePath = Path.GetRelativePath(_hostingEnvironment.WebRootPath, finalOutputPdfPath);
                 if (System.IO.File.Exists(finalOutputPdfPath))
                     return Ok(new { message = "PDF already generated.", pdfPath = relativePath });
                 Debug.WriteLine("outputPdfPath", outputPdfPath);
                 var ditaOtCommand = @"C:\dita\bin\dita.bat"; ;
-                var args = $"--input=\"{docV.DitaMapFilePath}\" --output=\"{outputPdfPath}\" --format=pdf";
+                var args = $"--input=\"{docVersionRole.DitaMapFilePath}\" --output=\"{outputPdfPath}\" --format=pdf";
                 args = args.Replace("\\", "/");
                 Debug.WriteLine("args", args);
                 using var process = new Process();
@@ -357,7 +399,7 @@ namespace AppConfgDocumentation.Controllers
                 {
                     return BadRequest(new { message = "PDF generation failed." });
                 }
-                docV.PDFfilePath = relativePath;
+                docVersionRole.PDFfilePath = relativePath;
                 await _dbContext.SaveChangesAsync();
 
                 return Ok(new { message = "PDF generated successfully.", pdfPath = relativePath, result });
@@ -367,13 +409,15 @@ namespace AppConfgDocumentation.Controllers
                 return BadRequest(new { message = ex.Message });
             }
         }
-        private string generateDitaMapXml(DocVersion docVersion, Documento document)
+        private string generateDitaMapXml(DocVersion docVersion, Documento document, int RoleId)
         {
 
             var attachedDitaTopicVersions = _dbContext.DocVersionDitatopicVersions
                 .Include(x => x.DitatopicVersion)
+                .ThenInclude(x => x.Roles)
                 .Where(x => x.DocVersionId == docVersion.Id)
                 .Select(x => x.DitatopicVersion)
+                .Where(x => x.Roles.Any(r => r.RoleId == RoleId))
                 .ToList();
             var topicRefs = attachedDitaTopicVersions.Select(x => $"<topicref href='{_ditaFileCreationService.ReplaceInvalidChars(x.FileName)}.dita' />");
 
@@ -384,6 +428,21 @@ namespace AppConfgDocumentation.Controllers
                     {string.Join("", topicRefs)}
                 </map>";
             return ditaMapXml;
+        }
+
+        private async Task<int> addDocVersionsRoles(int versionId)
+        {
+            var allroles = await _roleManager.Roles.ToListAsync();
+            var docVersionRoles = new List<DocVersionsRoles>();
+            foreach (var role in allroles)
+            {
+                var docVRole = new DocVersionsRoles { DocVersionId = versionId, RoleId = role.Id };
+                docVersionRoles.Add(docVRole);
+            }
+            await _dbContext.DocVersionsRoles.AddRangeAsync(docVersionRoles);
+            var result = await _dbContext.SaveChangesAsync();
+
+            return result;
         }
     }
 

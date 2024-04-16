@@ -12,7 +12,6 @@ namespace AppConfgDocumentation.Data
         IdentityRole<int>, int, IdentityUserClaim<int>, IdentityUserRole<int>,
         IdentityUserLogin<int>, IdentityRoleClaim<int>, IdentityUserToken<int>>
     {
-
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
@@ -29,6 +28,25 @@ namespace AppConfgDocumentation.Data
         public DbSet<DocVersionDitatopicVersion> DocVersionDitatopicVersions { get; set; }
         public DbSet<ConceptVersion> ConceptVersions { get; set; }
         public DbSet<TaskVersion> TaskVersions { get; set; }
+
+        public DbSet<DocVersionsRoles> DocVersionsRoles { get; set; }
+        public DbSet<DitaTopicVersionsRoles> DitaTopicVersionsRoles { get; set; }
+        // protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        // {
+        //     if (!optionsBuilder.IsConfigured)
+        //     {
+        //         IConfigurationRoot configuration = new ConfigurationBuilder()
+        //            .SetBasePath(Directory.GetCurrentDirectory())
+        //            .AddJsonFile("appsettings.json")
+        //            .Build();
+
+        //         var connectionString = configuration.GetConnectionString("DefaultConnection");
+
+        //         optionsBuilder.UseSqlServer(connectionString);
+
+
+        //     }
+        // }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<DitaTopic>()
@@ -63,6 +81,18 @@ namespace AppConfgDocumentation.Data
                 .WithOne(v => v.Document)
                 .HasForeignKey(v => v.DocumentId)
                 .OnDelete(DeleteBehavior.Cascade);
+            modelBuilder.Entity<DocVersion>()
+                .HasMany(v => v.DitatopicVersions)
+                .WithOne(dv => dv.DocVersion)
+                .HasForeignKey(dv => dv.DocVersionId)
+                .OnDelete(DeleteBehavior.NoAction);
+
+            modelBuilder.Entity<DocVersion>()
+                .HasMany(v => v.Roles)
+                .WithOne(dt => dt.DocVersion)
+                .HasForeignKey(dt => dt.DocVersionId)
+                .OnDelete(DeleteBehavior.Cascade);
+
             modelBuilder.Entity<DitatopicVersion>()
                 .HasMany(dtv => dtv.DocVersions)
                 .WithOne(dv => dv.DitatopicVersion)
@@ -88,6 +118,27 @@ namespace AppConfgDocumentation.Data
                 .HasOne(s => s.TaskVersion)
                 .WithMany(tv => tv.Steps)
                 .HasForeignKey(s => s.TaskVersionId);
+            modelBuilder.Entity<DocVersion>()
+                            .HasMany(dvr => dvr.Roles)
+                            .WithOne(dv => dv.DocVersion)
+                            .OnDelete(DeleteBehavior.Cascade);
+            modelBuilder.Entity<DocVersionsRoles>()
+                .HasKey(dvr => new { dvr.DocVersionId, dvr.RoleId });
+
+            modelBuilder.Entity<DocVersionsRoles>()
+                .HasOne(dvr => dvr.DocVersion)
+                .WithMany(dv => dv.Roles)
+                .HasForeignKey(dvr => dvr.DocVersionId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<DitaTopicVersionsRoles>()
+                .HasKey(dvr => new { dvr.DitatopicVersionId, dvr.RoleId });
+
+            modelBuilder.Entity<DitaTopicVersionsRoles>()
+                .HasOne(dvr => dvr.DitatopicVersion)
+                .WithMany(dv => dv.Roles)
+                .HasForeignKey(dvr => dvr.DitatopicVersionId)
+                .OnDelete(DeleteBehavior.Cascade);
             base.OnModelCreating(modelBuilder);
         }
     }

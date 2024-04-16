@@ -5,20 +5,20 @@
 namespace AppConfgDocumentation.Migrations
 {
     /// <inheritdoc />
-    public partial class MakeDocumentIdUn3243 : Migration
+    public partial class newMig3 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropForeignKey(
-                name: "FK_DitatopicVersions_DitaTopics_DitaTopicId",
-                table: "DitatopicVersions");
+                name: "FK_DocVersionsRoles_DocVersions_DocVersionId",
+                table: "DocVersionsRoles");
 
             migrationBuilder.AddForeignKey(
-                name: "FK_DitatopicVersions_DitaTopics_DitaTopicId",
-                table: "DitatopicVersions",
-                column: "DitaTopicId",
-                principalTable: "DitaTopics",
+                name: "FK_DocVersionsRoles_DocVersions_DocVersionId",
+                table: "DocVersionsRoles",
+                column: "DocVersionId",
+                principalTable: "DocVersions",
                 principalColumn: "Id",
                 onDelete: ReferentialAction.Cascade);
         }
@@ -27,14 +27,14 @@ namespace AppConfgDocumentation.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropForeignKey(
-                name: "FK_DitatopicVersions_DitaTopics_DitaTopicId",
-                table: "DitatopicVersions");
+                name: "FK_DocVersionsRoles_DocVersions_DocVersionId",
+                table: "DocVersionsRoles");
 
             migrationBuilder.AddForeignKey(
-                name: "FK_DitatopicVersions_DitaTopics_DitaTopicId",
-                table: "DitatopicVersions",
-                column: "DitaTopicId",
-                principalTable: "DitaTopics",
+                name: "FK_DocVersionsRoles_DocVersions_DocVersionId",
+                table: "DocVersionsRoles",
+                column: "DocVersionId",
+                principalTable: "DocVersions",
                 principalColumn: "Id");
         }
     }

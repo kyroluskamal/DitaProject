@@ -287,3 +287,4 @@ D:\IDDprojecct\AppConfgDocumentation\obj\Debug\net8.0\ref\AppConfgDocumentation.
 D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\Scrutor.dll
 D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\Swashbuckle.AspNetCore.Filters.dll
 D:\IDDprojecct\AppConfgDocumentation\bin\Debug\net8.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll
+D:\IDDprojecct\AppConfgDocumentation\obj\Debug\net8.0\AppConfgDocumentation.sourcelink.json

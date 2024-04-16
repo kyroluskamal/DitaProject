@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AppConfgDocumentation.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240405160118_MakeDocumentIdUn3243dsdsds")]
-    partial class MakeDocumentIdUn3243dsdsds
+    [Migration("20240415085102_newMig34")]
+    partial class newMig34
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -138,6 +138,21 @@ namespace AppConfgDocumentation.Migrations
                     b.UseTphMappingStrategy();
                 });
 
+            modelBuilder.Entity("AppConfgDocumentation.Models.DitaTopicVersionsRoles", b =>
+                {
+                    b.Property<int>("DitatopicVersionId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("RoleId")
+                        .HasColumnType("int");
+
+                    b.HasKey("DitatopicVersionId", "RoleId");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("DitaTopicVersionsRoles");
+                });
+
             modelBuilder.Entity("AppConfgDocumentation.Models.DitatopicVersion", b =>
                 {
                     b.Property<int>("Id")
@@ -161,7 +176,6 @@ namespace AppConfgDocumentation.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ShortDescription")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Type")
@@ -197,14 +211,6 @@ namespace AppConfgDocumentation.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("DitaMapFilePath")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("DitaMapXml")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("DocumentId")
                         .HasColumnType("int");
 
@@ -234,6 +240,33 @@ namespace AppConfgDocumentation.Migrations
                     b.HasIndex("DitatopicVersionId");
 
                     b.ToTable("DocVersionDitatopicVersions");
+                });
+
+            modelBuilder.Entity("AppConfgDocumentation.Models.DocVersionsRoles", b =>
+                {
+                    b.Property<int>("DocVersionId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("RoleId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("DitaMapFilePath")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DitaMapXml")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PDFfilePath")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("DocVersionId", "RoleId");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("DocVersionsRoles");
                 });
 
             modelBuilder.Entity("AppConfgDocumentation.Models.Documento", b =>
@@ -474,6 +507,25 @@ namespace AppConfgDocumentation.Migrations
                     b.Navigation("Document");
                 });
 
+            modelBuilder.Entity("AppConfgDocumentation.Models.DitaTopicVersionsRoles", b =>
+                {
+                    b.HasOne("AppConfgDocumentation.Models.DitatopicVersion", "DitatopicVersion")
+                        .WithMany("Roles")
+                        .HasForeignKey("DitatopicVersionId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole<int>", "Role")
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("DitatopicVersion");
+
+                    b.Navigation("Role");
+                });
+
             modelBuilder.Entity("AppConfgDocumentation.Models.DitatopicVersion", b =>
                 {
                     b.HasOne("AppConfgDocumentation.Models.DitaTopic", "DitaTopic")
@@ -513,6 +565,25 @@ namespace AppConfgDocumentation.Migrations
                     b.Navigation("DitatopicVersion");
 
                     b.Navigation("DocVersion");
+                });
+
+            modelBuilder.Entity("AppConfgDocumentation.Models.DocVersionsRoles", b =>
+                {
+                    b.HasOne("AppConfgDocumentation.Models.DocVersion", "DocVersion")
+                        .WithMany("Roles")
+                        .HasForeignKey("DocVersionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole<int>", "Role")
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("DocVersion");
+
+                    b.Navigation("Role");
                 });
 
             modelBuilder.Entity("AppConfgDocumentation.Models.Documento", b =>
@@ -596,6 +667,8 @@ namespace AppConfgDocumentation.Migrations
             modelBuilder.Entity("AppConfgDocumentation.Models.DitatopicVersion", b =>
                 {
                     b.Navigation("DocVersions");
+
+                    b.Navigation("Roles");
                 });
 
             modelBuilder.Entity("AppConfgDocumentation.Models.DocVersion", b =>
@@ -603,6 +676,8 @@ namespace AppConfgDocumentation.Migrations
                     b.Navigation("DitaTopics");
 
                     b.Navigation("DitatopicVersions");
+
+                    b.Navigation("Roles");
                 });
 
             modelBuilder.Entity("AppConfgDocumentation.Models.Documento", b =>

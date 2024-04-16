@@ -1,5 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 using AppConfgDocumentation.enms;
+using Microsoft.AspNetCore.Http.HttpResults;
 
 namespace AppConfgDocumentation.Services
 {
@@ -7,10 +8,9 @@ namespace AppConfgDocumentation.Services
     public delegate string HandleDitaFileCreation(string xmlContent, string outputPath, string filename);
     public interface IDitaFileCreationService
     {
-        public string SaveDitaFile(string xmlContent, string outputPath, string filename, DitaFileExtensions fileExtension = DitaFileExtensions.dita);
+        public string SaveDitaFile(string xmlContent, string outputPath, string filename, DitaFileExtensions fileExtension = DitaFileExtensions.dita, string roleName = "");
         public string ReplaceInvalidChars(string title);
         public void CreateFolderForDocument(string title);
-        // public string SaveDitamap(string xmlContent, string outputPath, string fileName);
         public string RenameFolder(string oldFileName, string newFolderName);
         public void DeleteDocumentFolder(string folderPath);
     }
@@ -27,7 +27,7 @@ namespace AppConfgDocumentation.Services
             _ditaValidationService = ditaValidationService;
         }
 
-        public string SaveDitaFile(string xmlContent, string outputPath, string fileName, DitaFileExtensions fileExtension = DitaFileExtensions.dita)
+        public string SaveDitaFile(string xmlContent, string outputPath, string filename, DitaFileExtensions fileExtension = DitaFileExtensions.dita, string roleName = "")
         {
             // var isValid = _ditaValidationService.ValidateDitaXml(xmlContent, out string validationErrors);
             // if (!isValid)
@@ -35,15 +35,15 @@ namespace AppConfgDocumentation.Services
             //     throw new InvalidOperationException($"The XML content is not valid: {validationErrors}");
             // }
             var extension = fileExtension == DitaFileExtensions.dita ? ".dita" : ".ditamap";
-            string filePath = Path.Combine(_hostingEnvironment.WebRootPath, outputPath, ReplaceInvalidChars(fileName) + extension);
+            string filePath = Path.Combine(_hostingEnvironment.WebRootPath, outputPath, $"${ReplaceInvalidChars(filename)}_{roleName}{extension}");
             File.WriteAllText(filePath, xmlContent);
             return filePath;
         }
 
         //delete forlder 
-        public void DeleteDocumentFolder(string FolderName)
+        public void DeleteDocumentFolder(string folderPath)
         {
-            string folderPath = Path.Combine(_hostingEnvironment.WebRootPath, ReplaceInvalidChars(FolderName));
+            folderPath = Path.Combine(_hostingEnvironment.WebRootPath, ReplaceInvalidChars(folderPath));
             if (Directory.Exists(folderPath))
             {
                 Directory.Delete(folderPath, true);

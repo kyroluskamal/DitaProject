@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace AppConfgDocumentation.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class AddRoles : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -52,20 +52,6 @@ namespace AppConfgDocumentation.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Sections",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Content = table.Column<string>(type: "nvarchar(max)", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Sections", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -181,9 +167,8 @@ namespace AppConfgDocumentation.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    AuthorId = table.Column<int>(type: "int", nullable: false)
+                    AuthorId = table.Column<int>(type: "int", nullable: false),
+                    FolderName = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -197,20 +182,23 @@ namespace AppConfgDocumentation.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Versions",
+                name: "DocVersions",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     VersionNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    DitaMapXml = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    PDFfilePath = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    DitaMapFilePath = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     DocumentId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Versions", x => x.Id);
+                    table.PrimaryKey("PK_DocVersions", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Versions_Documentos_DocumentId",
+                        name: "FK_DocVersions_Documentos_DocumentId",
                         column: x => x.DocumentId,
                         principalTable: "Documentos",
                         principalColumn: "Id",
@@ -218,25 +206,148 @@ namespace AppConfgDocumentation.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "VersionSections",
+                name: "DitaTopics",
                 columns: table => new
                 {
-                    SectionId = table.Column<int>(type: "int", nullable: false),
-                    VersionId = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    DocumentId = table.Column<int>(type: "int", nullable: false),
+                    DocVersionId = table.Column<int>(type: "int", nullable: true),
+                    Type = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_VersionSections", x => new { x.VersionId, x.SectionId });
+                    table.PrimaryKey("PK_DitaTopics", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_VersionSections_Sections_SectionId",
-                        column: x => x.SectionId,
-                        principalTable: "Sections",
+                        name: "FK_DitaTopics_DocVersions_DocVersionId",
+                        column: x => x.DocVersionId,
+                        principalTable: "DocVersions",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_DitaTopics_Documentos_DocumentId",
+                        column: x => x.DocumentId,
+                        principalTable: "Documentos",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "DocVersionsRoles",
+                columns: table => new
+                {
+                    RoleId = table.Column<int>(type: "int", nullable: false),
+                    DocVersionId = table.Column<int>(type: "int", nullable: false),
+                    DitaMapFilePath = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    PDFfilePath = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_DocVersionsRoles", x => new { x.DocVersionId, x.RoleId });
+                    table.ForeignKey(
+                        name: "FK_DocVersionsRoles_AspNetRoles_RoleId",
+                        column: x => x.RoleId,
+                        principalTable: "AspNetRoles",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_VersionSections_Versions_VersionId",
-                        column: x => x.VersionId,
-                        principalTable: "Versions",
+                        name: "FK_DocVersionsRoles_DocVersions_DocVersionId",
+                        column: x => x.DocVersionId,
+                        principalTable: "DocVersions",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "DitatopicVersions",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ShortDescription = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    XmlContent = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    FileName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    VersionNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    FilePath = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    DitaTopicId = table.Column<int>(type: "int", nullable: false),
+                    Type = table.Column<int>(type: "int", nullable: false),
+                    Body = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_DitatopicVersions", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_DitatopicVersions_DitaTopics_DitaTopicId",
+                        column: x => x.DitaTopicId,
+                        principalTable: "DitaTopics",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "DitaTopicVersionsRoles",
+                columns: table => new
+                {
+                    RoleId = table.Column<int>(type: "int", nullable: false),
+                    DitatopicVersionId = table.Column<int>(type: "int", nullable: false),
+                    FilePath = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_DitaTopicVersionsRoles", x => new { x.DitatopicVersionId, x.RoleId });
+                    table.ForeignKey(
+                        name: "FK_DitaTopicVersionsRoles_AspNetRoles_RoleId",
+                        column: x => x.RoleId,
+                        principalTable: "AspNetRoles",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_DitaTopicVersionsRoles_DitatopicVersions_DitatopicVersionId",
+                        column: x => x.DitatopicVersionId,
+                        principalTable: "DitatopicVersions",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "DocVersionDitatopicVersions",
+                columns: table => new
+                {
+                    DocVersionId = table.Column<int>(type: "int", nullable: false),
+                    DitatopicVersionId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_DocVersionDitatopicVersions", x => new { x.DocVersionId, x.DitatopicVersionId });
+                    table.ForeignKey(
+                        name: "FK_DocVersionDitatopicVersions_DitatopicVersions_DitatopicVersionId",
+                        column: x => x.DitatopicVersionId,
+                        principalTable: "DitatopicVersions",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_DocVersionDitatopicVersions_DocVersions_DocVersionId",
+                        column: x => x.DocVersionId,
+                        principalTable: "DocVersions",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Steps",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Order = table.Column<int>(type: "int", nullable: false),
+                    Command = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    TaskVersionId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Steps", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Steps_DitatopicVersions_TaskVersionId",
+                        column: x => x.TaskVersionId,
+                        principalTable: "DitatopicVersions",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -281,19 +392,49 @@ namespace AppConfgDocumentation.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
+                name: "IX_DitaTopics_DocumentId",
+                table: "DitaTopics",
+                column: "DocumentId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_DitaTopics_DocVersionId",
+                table: "DitaTopics",
+                column: "DocVersionId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_DitatopicVersions_DitaTopicId",
+                table: "DitatopicVersions",
+                column: "DitaTopicId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_DitaTopicVersionsRoles_RoleId",
+                table: "DitaTopicVersionsRoles",
+                column: "RoleId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Documentos_AuthorId",
                 table: "Documentos",
                 column: "AuthorId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Versions_DocumentId",
-                table: "Versions",
+                name: "IX_DocVersionDitatopicVersions_DitatopicVersionId",
+                table: "DocVersionDitatopicVersions",
+                column: "DitatopicVersionId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_DocVersions_DocumentId",
+                table: "DocVersions",
                 column: "DocumentId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_VersionSections_SectionId",
-                table: "VersionSections",
-                column: "SectionId");
+                name: "IX_DocVersionsRoles_RoleId",
+                table: "DocVersionsRoles",
+                column: "RoleId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Steps_TaskVersionId",
+                table: "Steps",
+                column: "TaskVersionId");
         }
 
         /// <inheritdoc />
@@ -315,16 +456,28 @@ namespace AppConfgDocumentation.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "VersionSections");
+                name: "DitaTopicVersionsRoles");
+
+            migrationBuilder.DropTable(
+                name: "DocVersionDitatopicVersions");
+
+            migrationBuilder.DropTable(
+                name: "DocVersionsRoles");
+
+            migrationBuilder.DropTable(
+                name: "Steps");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
-                name: "Sections");
+                name: "DitatopicVersions");
 
             migrationBuilder.DropTable(
-                name: "Versions");
+                name: "DitaTopics");
+
+            migrationBuilder.DropTable(
+                name: "DocVersions");
 
             migrationBuilder.DropTable(
                 name: "Documentos");

@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.AspNetCore.Identity;
 
 namespace AppConfgDocumentation.Models
 {
@@ -27,6 +28,7 @@ namespace AppConfgDocumentation.Models
         public int DitaTopicId { get; set; }
         public virtual DitaTopic? DitaTopic { get; set; }
         public virtual ICollection<DocVersionDitatopicVersion> DocVersions { get; set; } = [];
+        public virtual ICollection<DitaTopicVersionsRoles> Roles { get; set; } = [];
 
     }
     public class Concept : DitaTopic
@@ -60,6 +62,14 @@ namespace AppConfgDocumentation.Models
         [ForeignKey(nameof(TaskVersion))]
         public int TaskVersionId { get; set; }
         public virtual TaskVersion? TaskVersion { get; set; }
+    }
+
+    public class DitaTopicVersionsRoles
+    {
+        public int RoleId { get; set; }
+        public virtual IdentityRole<int> Role { get; set; }
+        public int DitatopicVersionId { get; set; }
+        public virtual DitatopicVersion DitatopicVersion { get; set; }
     }
 }
 
