@@ -21,8 +21,7 @@ namespace AppConfgDocumentation.ModelViews
         public ICollection<StepViewModel> Steps { get; set; } = [];
     }
 
-    public record DitaTopicUpdateViewModel([Required] string Title, int DocumentId, [Required] int Type, [Required]
-         ICollection<int> Roles);
+    public record DitaTopicUpdateViewModel([Required] string Title, int DocumentId);
 
 
     public class DitaTopicVersionViewModel : CommonModel

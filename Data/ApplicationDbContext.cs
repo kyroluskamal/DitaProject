@@ -18,9 +18,9 @@ namespace AppConfgDocumentation.Data
         }
 
         public DbSet<DitaTopic> DitaTopics { get; set; }
-        public DbSet<Concept> Concepts { get; set; }
-        public DbSet<Tasks> Tasks { get; set; }
-        public DbSet<Reference> References { get; set; }
+        // public DbSet<Concept> Concepts { get; set; }
+        // public DbSet<Tasks> Tasks { get; set; }
+        // public DbSet<Reference> References { get; set; }
         public DbSet<Step> Steps { get; set; }
         public DbSet<Documento> Documentos { get; set; }
         public DbSet<DocVersion> DocVersions { get; set; }
@@ -49,11 +49,11 @@ namespace AppConfgDocumentation.Data
         // }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<DitaTopic>()
-            .HasDiscriminator<int>("Type")
-            .HasValue<Concept>(0)
-            .HasValue<Tasks>(1)
-            .HasValue<Reference>(2);
+            // modelBuilder.Entity<DitaTopic>()
+            // .HasDiscriminator<int>("Type")
+            // .HasValue<Concept>(0)
+            // .HasValue<Tasks>(1)
+            // .HasValue<Reference>(2);
 
 
 

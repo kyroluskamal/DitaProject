@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "QLpptc29IM08aYuVppuk8QuUYLwohguL33W0RGVZhqM=",
+  "Hash": "dqRddYip+fYOIhqvs+PYPbfjhZIjgutmZg47kbBMN2c=",
   "Source": "AppConfgDocumentation",
   "BasePath": "_content/AppConfgDocumentation",
   "Mode": "Default",
@@ -16,6 +16,25 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\DKSjdlajdlkjljfsdfsdf_id1005\\Descriptio65_T_id_22_V_id_21_v_no_DC44.dita",
+      "SourceId": "AppConfgDocumentation",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\",
+      "BasePath": "_content/AppConfgDocumentation",
+      "RelativePath": "DKSjdlajdlkjljfsdfsdf_id1005/Descriptio65_T_id_22_V_id_21_v_no_DC44.dita",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\DKSjdlajdlkjljfsdfsdf_id1005\\Descriptio65_T_id_22_V_id_21_v_no_DC44.dita"
+    },
     {
       "Identity": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\dtd\\bookmap.dtd",
       "SourceId": "AppConfgDocumentation",
@@ -699,25 +718,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\dtd\\xnalDomain.mod"
-    },
-    {
-      "Identity": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\My_new_Doc_id9\\$fsdfsd_T_id_21_V_id_18_v_no_fsdfsdf_.dita",
-      "SourceId": "AppConfgDocumentation",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\",
-      "BasePath": "_content/AppConfgDocumentation",
-      "RelativePath": "My_new_Doc_id9/$fsdfsd_T_id_21_V_id_18_v_no_fsdfsdf_.dita",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\My_new_Doc_id9\\$fsdfsd_T_id_21_V_id_18_v_no_fsdfsdf_.dita"
     }
   ]
 }

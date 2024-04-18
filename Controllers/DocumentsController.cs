@@ -75,7 +75,8 @@ namespace AppConfgDocumentation.Controllers
                         {
                             c.Id,
                             c.Title,
-                            Type = c is Concept ? 0 : c is Tasks ? 1 : -1,
+                            c.DocumentId,
+                            // Type = c is Concept ? 0 : c is Tasks ? 1 : -1,
                             DitatopicVersions = c.DitatopicVersions.Select(v => new
                             {
                                 v.Id,
@@ -128,7 +129,12 @@ namespace AppConfgDocumentation.Controllers
         {
             try
             {
-                Documento? doc = await _dbContext.Documentos.FirstOrDefaultAsync(x => x.Id == id);
+                Documento? doc = await _dbContext.Documentos.Include(f => f.Author).Include(x => x.DocVersions)
+                .ThenInclude(c => c.Roles)
+                .ThenInclude(c => c.Role)
+                .Include(x => x.DitaTopics)
+                .ThenInclude(c => c.DitatopicVersions)
+                .ThenInclude(c => c.Roles).FirstOrDefaultAsync(x => x.Id == id);
                 if (doc == null) return NotFound(new { message = "Document not found" });
 
                 doc.Title = documentViewModel.Title;
@@ -232,7 +238,8 @@ namespace AppConfgDocumentation.Controllers
                 Documento? doc = await _dbContext.Documentos.FirstOrDefaultAsync(x => x.Id == id);
                 if (doc == null) return NotFound(new { message = "Document not found" });
 
-                DocVersion? docVersion = await _dbContext.DocVersions.FirstOrDefaultAsync(x => x.Id == versionId);
+                DocVersion? docVersion = await _dbContext.DocVersions.Include(x => x.Document).Include(x => x.Roles)
+            .Include(x => x.DitatopicVersions).FirstOrDefaultAsync(x => x.Id == versionId);
                 if (docVersion == null) return NotFound(new { message = "Version not found" });
 
                 docVersion.VersionNumber = version.VersionNumber;
@@ -264,7 +271,7 @@ namespace AppConfgDocumentation.Controllers
                 {
                     _ditaFileCreationService.DeleteDocumentFolder($"{_hostingEnvironment.WebRootPath}{doc.FolderName}\\{docVersion.VersionNumber}");
                 }
-                return Ok("Document Version is deleted successfully.");
+                return Ok(new { message = "Document Version is deleted successfully." });
             }
             catch (Exception ex)
             {

@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace AppConfgDocumentation.Models
 {
-    public abstract class DitaTopic : CommonModel
+    public class DitaTopic : CommonModel
     {
         [Required]
         public string Title { get; set; } = string.Empty;
@@ -31,17 +31,17 @@ namespace AppConfgDocumentation.Models
         public virtual ICollection<DitaTopicVersionsRoles> Roles { get; set; } = [];
 
     }
-    public class Concept : DitaTopic
-    {
-    }
+    // public class Concept : DitaTopic
+    // {
+    // }
 
-    public class Tasks : DitaTopic
-    {
-    }
+    // public class Tasks : DitaTopic
+    // {
+    // }
 
-    public class Reference : DitaTopic
-    {
-    }
+    // public class Reference : DitaTopic
+    // {
+    // }
     public class ConceptVersion : DitatopicVersion
     {
         public string Body { get; set; } = string.Empty;
