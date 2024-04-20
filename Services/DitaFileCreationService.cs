@@ -53,7 +53,7 @@ namespace AppConfgDocumentation.Services
         {
             string folderPath = Path.Combine(_hostingEnvironment.WebRootPath, title);
 
-            if (!Directory.Exists(folderPath))
+            if (folderPath != null && !Directory.Exists(folderPath))
             {
                 Directory.CreateDirectory(folderPath);
             }

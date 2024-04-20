@@ -1,21 +1,5 @@
 ﻿<Project>
   <ItemGroup>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\DKSjdlajdlkjljfsdfsdf_id1005\Descriptio65_T_id_22_V_id_21_v_no_DC44.dita))">
-      <SourceType>Package</SourceType>
-      <SourceId>AppConfgDocumentation</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AppConfgDocumentation</BasePath>
-      <RelativePath>DKSjdlajdlkjljfsdfsdf_id1005/Descriptio65_T_id_22_V_id_21_v_no_DC44.dita</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\DKSjdlajdlkjljfsdfsdf_id1005\Descriptio65_T_id_22_V_id_21_v_no_DC44.dita))</OriginalItemSpec>
-    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\dtd\bookmap.dtd))">
       <SourceType>Package</SourceType>
       <SourceId>AppConfgDocumentation</SourceId>
@@ -591,6 +575,22 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\dtd\xnalDomain.mod))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\My_New_Doc_222_id1006\ldjdsljflksd_T_id_23_V_id_23_v_no_31.dita))">
+      <SourceType>Package</SourceType>
+      <SourceId>AppConfgDocumentation</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/AppConfgDocumentation</BasePath>
+      <RelativePath>My_New_Doc_222_id1006/ldjdsljflksd_T_id_23_V_id_23_v_no_31.dita</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\My_New_Doc_222_id1006\ldjdsljflksd_T_id_23_V_id_23_v_no_31.dita))</OriginalItemSpec>
     </StaticWebAsset>
   </ItemGroup>
 </Project>

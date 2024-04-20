@@ -1,0 +1,7 @@
+{
+    "sarif-viewer.connectToGithubCodeScanning": "on",
+    "sonarlint.connectedMode.project": {
+        "connectionId": "kyroluskamal",
+        "projectKey": "kyroluskamal_DitaProject"
+    }
+}

@@ -81,6 +81,7 @@ namespace AppConfgDocumentation.Controllers
                             {
                                 v.Id,
                                 v.VersionNumber,
+                                v.CreatedAt,
                                 Type = v is ConceptVersion ? 0 : v is TaskVersion ? 1 : -1,
                                 v.ShortDescription,
                                 Roles = v.Roles.Select(r => r.RoleId).ToList(),
