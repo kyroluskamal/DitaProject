@@ -6,5 +6,6 @@ namespace AppConfgDocumentation.Models
         public string Message { get; set; } = string.Empty;
         public dynamic? Ditatopic { get; set; }
         public DitatopicVersion? DitatopicVersion { get; set; }
+        public dynamic? data { get; set; }
     }
 }

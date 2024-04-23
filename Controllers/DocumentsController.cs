@@ -46,7 +46,10 @@ namespace AppConfgDocumentation.Controllers
              .ThenInclude(c => c.Roles)
                 .ThenInclude(c => c.Role)
                 .Include(x => x.DitaTopics)
-                .ThenInclude(c => c.DitatopicVersions).ThenInclude(c => c.Roles)
+                .ThenInclude(c => c.DitatopicVersions)
+                .ThenInclude(c => c.Roles)
+ .Include(x => x.DitaTopics)
+                .ThenInclude(c => c.DitatopicVersions).ThenInclude(f => f.DitaTopic)
                 .Select(x =>
                     new
                     {
@@ -58,10 +61,12 @@ namespace AppConfgDocumentation.Controllers
                             Id = c.Id,
                             VersionNumber = c.VersionNumber,
                             DocumentId = c.DocumentId,
+                            DitaTopics = c.DitatopicVersions.Select(x => x.DitatopicVersion).Select(y => y.DitaTopic).Distinct() as List<DitaTopic>,
                             DitatopicVersions = c.DitatopicVersions.Select(v => new DocVersionDitatopicVersion
                             {
                                 DitatopicVersionId = v.DitatopicVersionId,
-                                DocVersionId = v.DocVersionId
+                                DocVersionId = v.DocVersionId,
+                                DitatopicVersion = v.DitatopicVersion,
                             }).ToList(),
                             Roles = c.Roles.Select(r => new DocVersionsRoles
                             {
@@ -70,7 +75,9 @@ namespace AppConfgDocumentation.Controllers
                                 RoleId = r.RoleId,
                                 Role = r.Role
                             }).ToList()
-                        }).ToList(),
+                        }
+
+                        ).ToList(),
                         DitaTopics = x.DitaTopics.Select(c => new
                         {
                             c.Id,
@@ -313,13 +320,21 @@ namespace AppConfgDocumentation.Controllers
         {
             try
             {
-                Documento? doc = await _dbContext.Documentos.FirstOrDefaultAsync(x => x.Id == id);
+                Documento? doc = await _dbContext.Documentos.Include(x => x.DitaTopics)
+                .ThenInclude(x => x.DitatopicVersions).ThenInclude(x => x.Roles)
+                .Include(x => x.DocVersions).ThenInclude(x => x.DitatopicVersions)
+                .Include(x => x.DocVersions).ThenInclude(b => b.Roles).ThenInclude(r => r.Role).FirstOrDefaultAsync(x => x.Id == id);
                 if (doc == null) return NotFound(new { message = "Document not found" });
 
-                DocVersion? docVersion = await _dbContext.DocVersions.FirstOrDefaultAsync(x => x.Id == docVersionId);
+                DocVersion? docVersion = doc.DocVersions.FirstOrDefault(x => x.Id == docVersionId);
                 if (docVersion == null) return NotFound(new { message = "Version not found" });
 
                 using var transaction = await _dbContext.Database.BeginTransactionAsync();
+                var ditaTopicVersions = await _dbContext.DocVersionDitatopicVersions
+                .Where(x => x.DocVersionId == docVersion.Id)
+                .ToListAsync();
+                _dbContext.DocVersionDitatopicVersions.RemoveRange(ditaTopicVersions);
+                await _dbContext.SaveChangesAsync();
                 foreach (var ditaTopicVersionId in ditaTopicVersionIds)
                 {
                     DitatopicVersion? ditaTopicVersion = await _dbContext.DitatopicVersions.FirstOrDefaultAsync(x => x.Id == ditaTopicVersionId);
@@ -330,15 +345,18 @@ namespace AppConfgDocumentation.Controllers
                     await _dbContext.DocVersionDitatopicVersions.AddAsync(docVersionDitatopicVersion);
                 }
                 await _dbContext.SaveChangesAsync();
+
+                await generateAllPDFsForAllRoles(docVersion, doc);
+                await _dbContext.SaveChangesAsync();
                 await transaction.CommitAsync();
-                return CreatedAtAction(nameof(GetDocument), new { id = doc.Id }, doc);
+                var docs = GetDocument(id).GetAwaiter().GetResult() as OkObjectResult;
+                return Ok(new { message = "DitaTopicVersions are attached successfully.", data = docs?.Value });
             }
             catch (Exception ex)
             {
                 return BadRequest(new { message = ex.Message, stackTrace = ex.StackTrace });
             }
         }
-
         //deattach DitaTopicVersion from DocVersion
         [HttpDelete("{id}/versions/{docVersionId}/ditaTopicVersions/{ditaTopicVersionId}")]
         public async Task<IActionResult> DeattachDitaTopicVersion([FromRoute] int id, [FromRoute] int docVersionId, [FromRoute] int ditaTopicVersionId)
@@ -367,109 +385,9 @@ namespace AppConfgDocumentation.Controllers
             }
         }
 
-
-        // create ditamap for doc version
-        [HttpPut("ditamap")]
-
-        public async Task<IActionResult> CreateDitamap([FromBody] DitamapViewModel ditamapInfo)
+        private string generateDitaMapXml(List<DitatopicVersion> ditatopicVersions, Documento document, DocVersion docVersion)
         {
-            try
-            {
-                Documento? doc = await _dbContext.Documentos.FirstOrDefaultAsync(x => x.Id == ditamapInfo.docId);
-                if (doc == null) return NotFound(new { message = "Document not found" });
-
-
-                DocVersion? docVersion = await _dbContext.DocVersions.Include(x => x.DitatopicVersions).Include(c => c.Roles).FirstOrDefaultAsync(x => x.Id == ditamapInfo.docVersionId);
-                if (docVersion == null) return NotFound(new { message = "Version not found" });
-
-                var docVersionRole = _dbContext.DocVersionsRoles.Include(x => x.Role).FirstOrDefault(x => x.RoleId == ditamapInfo.RoleId && x.DocVersionId == docVersion.Id);
-                if (docVersionRole == null) return NotFound(new { message = "Role not found" });
-                docVersionRole.DitaMapXml = generateDitaMapXml(docVersion, doc, ditamapInfo.RoleId);
-
-                docVersionRole.DitaMapFilePath = _ditaFileCreationService.SaveDitaFile(docVersionRole.DitaMapXml, doc.FolderName, docVersion.VersionNumber,
-                DitaFileExtensions.ditamap, docVersionRole.Role.Name);
-                await _dbContext.SaveChangesAsync();
-                return Ok(docVersion);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(new { message = ex.Message, stackTrace = ex.StackTrace });
-            }
-        }
-
-
-        [HttpPost("{id}/versions/{docVersionId}/ditamap")]
-        public async Task<IActionResult> GeneratePDF([FromRoute] int id, [FromRoute] int docVersionId, [FromRoute] int RoleId)
-        {
-            var docV = await _dbContext.DocVersions.Include(x => x.Document).FirstOrDefaultAsync(x => x.Id == docVersionId && x.DocumentId == id);
-            if (docV == null) return NotFound(new { message = "Document not found" });
-            var docVersionRole = _dbContext.DocVersionsRoles.Include(x => x.Role).FirstOrDefault(x => x.RoleId == RoleId && x.DocVersionId == docV.Id);
-            if (docVersionRole == null) return NotFound(new { message = "Role not found" });
-            try
-            {
-                var outputPdfPath = Path.Combine(_hostingEnvironment.WebRootPath, docV.Document.FolderName
-                , $"{docV.VersionNumber}");
-                var finalOutputPdfPath = $"{outputPdfPath}\\{docV.VersionNumber}_{docVersionRole.Role.Name}.pdf";
-                var relativePath = Path.GetRelativePath(_hostingEnvironment.WebRootPath, finalOutputPdfPath);
-                if (System.IO.File.Exists(finalOutputPdfPath))
-                    return Ok(new { message = "PDF already generated.", pdfPath = relativePath });
-                Debug.WriteLine("outputPdfPath", outputPdfPath);
-                var ditaOtCommand = @"C:\dita\bin\dita.bat"; ;
-                var args = $"--input=\"{docVersionRole.DitaMapFilePath}\" --output=\"{outputPdfPath}\" --format=pdf";
-                args = args.Replace("\\", "/");
-                Debug.WriteLine("args", args);
-                using var process = new Process();
-                process.StartInfo = new ProcessStartInfo
-                {
-                    FileName = ditaOtCommand,
-                    Arguments = args,
-                    RedirectStandardOutput = true,
-                    RedirectStandardError = true,
-                    UseShellExecute = false,
-                    CreateNoWindow = true
-                };
-
-                process.Start();
-
-                // To read the output (stdout)
-                string result = await process.StandardOutput.ReadToEndAsync();
-                string error = await process.StandardError.ReadToEndAsync();
-
-                process.WaitForExit();
-
-                if (!string.IsNullOrEmpty(error))
-                {
-                    // Log the error.
-                    Console.WriteLine(error);
-                    return BadRequest(new { message = error });
-                }
-                outputPdfPath = $"{outputPdfPath}\\{docV.VersionNumber}.pdf";
-                // Further check if the PDF was generated successfully.
-                if (!System.IO.File.Exists(outputPdfPath))
-                {
-                    return BadRequest(new { message = "PDF generation failed." });
-                }
-                docVersionRole.PDFfilePath = relativePath;
-                await _dbContext.SaveChangesAsync();
-
-                return Ok(new { message = "PDF generated successfully.", pdfPath = relativePath, result });
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(new { message = ex.Message });
-            }
-        }
-        private string generateDitaMapXml(DocVersion docVersion, Documento document, int RoleId)
-        {
-
-            var attachedDitaTopicVersions = _dbContext.DocVersionDitatopicVersions
-                .Include(x => x.DitatopicVersion)
-                .ThenInclude(x => x.Roles)
-                .Where(x => x.DocVersionId == docVersion.Id)
-                .Select(x => x.DitatopicVersion)
-                .Where(x => x.Roles.Any(r => r.RoleId == RoleId))
-                .ToList();
-            var topicRefs = attachedDitaTopicVersions.Select(x => $"<topicref href='{_ditaFileCreationService.ReplaceInvalidChars(x.FileName)}.dita' />");
+            var topicRefs = ditatopicVersions.Select(x => $"<topicref href='{_ditaFileCreationService.ReplaceInvalidChars(x.FileName)}.dita' />");
 
             var ditaMapXml = $@"<?xml version='1.0' encoding='UTF-8'?>
                 <!DOCTYPE map PUBLIC '-//OASIS//DTD DITA Map//EN' '{_hostingEnvironment.WebRootPath.Replace("\\", "/")}/dtd/map.dtd'>
@@ -479,7 +397,27 @@ namespace AppConfgDocumentation.Controllers
                 </map>";
             return ditaMapXml;
         }
-
+        private async Task<ReturnTypeOfDitaToics> generateAllPDFsForAllRoles(DocVersion docVersion, Documento doc)
+        {
+            var res = new ReturnTypeOfDitaToics();
+            try
+            {
+                foreach (var role in docVersion.Roles)
+                {
+                    var ditatopicversionsByRole = doc.DitaTopics.SelectMany(x => x.DitatopicVersions).Where(x => x.Roles.Any(r => r.RoleId == role.RoleId)).ToList();
+                    role.DitaMapXml = generateDitaMapXml(ditatopicversionsByRole, doc, docVersion);
+                    role.DitaMapFilePath = _ditaFileCreationService.SaveDitaFile(role.DitaMapXml, doc.FolderName, docVersion.VersionNumber,
+                    DitaFileExtensions.ditamap, role.Role.Name);
+                    res = await GeneratePDF(request: new GeneratePDFModelView(docV: docVersion, docVersionRole: role));
+                }
+                return res;
+            }
+            catch (Exception ex)
+            {
+                res = new ReturnTypeOfDitaToics { Code = 0, Message = ex.Message };
+                return res;
+            }
+        }
         private async Task<int> addDocVersionsRoles(int versionId)
         {
             var allroles = await _roleManager.Roles.ToListAsync();
@@ -494,6 +432,57 @@ namespace AppConfgDocumentation.Controllers
 
             return result;
         }
+        private async Task<ReturnTypeOfDitaToics> GeneratePDF(GeneratePDFModelView request)
+        {
+            var res = new ReturnTypeOfDitaToics();
+            try
+            {
+                var outputPdfPath = Path.Combine(_hostingEnvironment.WebRootPath, request.docV.Document.FolderName
+                , $"{request.docV.VersionNumber}");
+                var finalOutputPdfPath = $"{outputPdfPath}\\{request.docV.VersionNumber}{request.docVersionRole.Role.Name}.pdf";
+                var relativePath = Path.GetRelativePath(_hostingEnvironment.WebRootPath, finalOutputPdfPath);
+                if (System.IO.File.Exists(finalOutputPdfPath))
+                {
+                    System.IO.File.Delete(finalOutputPdfPath);
+                }
+                var ditaOtCommand = @"C:\dita\bin\dita.bat";
+                var args = $"--input=\"{request.docVersionRole.DitaMapFilePath}\" --output=\"{outputPdfPath}\" --format=pdf";
+                args = args.Replace("\\", "/");
+                using var process = new Process();
+                process.StartInfo = new ProcessStartInfo
+                {
+                    FileName = ditaOtCommand,
+                    Arguments = args,
+                    RedirectStandardOutput = true,
+                    RedirectStandardError = true,
+                    UseShellExecute = false,
+                    CreateNoWindow = true
+                };
+                process.Start();
+                // To read the output (stdout)
+                string error = await process.StandardError.ReadToEndAsync();
+                process.WaitForExit();
+                if (!string.IsNullOrEmpty(error))
+                {
+                    res = new ReturnTypeOfDitaToics { Code = 0, Message = error };
+                    return res;
+                }
+                outputPdfPath = $"{outputPdfPath}\\{request.docV.VersionNumber}.pdf";
+                // Further check if the PDF was generated successfully.
+                request.docVersionRole.PDFfilePath = relativePath;
+                if (!System.IO.File.Exists(outputPdfPath))
+                {
+                    res = new ReturnTypeOfDitaToics { Code = 0, Message = "PDF generation failed." };
+                    return res;
+                }
+                await _dbContext.SaveChangesAsync();
+                return new ReturnTypeOfDitaToics { Code = 1, Message = "PDF generated successfully.", data = relativePath };
+            }
+            catch (Exception ex)
+            {
+                res = new ReturnTypeOfDitaToics { Code = 0, Message = ex.Message };
+                return res;
+            }
+        }
     }
-
 }

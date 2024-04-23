@@ -10,4 +10,5 @@ namespace AppConfgDocumentation.ModelViews
     }
 
     public record DocumentUpdateViewModel(string Title);
+    public record GeneratePDFModelView(DocVersion docV, DocVersionsRoles docVersionRole);
 }

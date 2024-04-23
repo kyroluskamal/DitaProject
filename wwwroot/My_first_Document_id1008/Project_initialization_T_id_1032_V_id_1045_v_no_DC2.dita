@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+                <!DOCTYPE task PUBLIC '-//OASIS//DTD DITA Task//EN' '../dtd/task.dtd'>
+                <task id='Project_initialization_T_id_1032_V_id_1045_v_no_DC2'>
+                    <title>Project initialization</title>
+                    <shortdesc>This is a detailed steps for project initialziation</shortdesc>
+                    <taskbody>
+                        <steps><step>
+                    <cmd>Open the program</cmd>
+                </step><step>
+                    <cmd>Delete file</cmd>
+                </step></steps>
+                    </taskbody>
+                </task>
+            

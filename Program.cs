@@ -5,6 +5,7 @@ using AppConfgDocumentation.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
+using Microsoft.Extensions.FileProviders;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.Filters;
 
@@ -26,6 +27,7 @@ builder.Services.AddSwaggerGen(options =>
         Name = "Authorization",
         // Type = SecuritySchemeType.ApiKey
     });
+    options.DocumentFilter<IgnoreMethodsFilter>();
 
     options.OperationFilter<SecurityRequirementsOperationFilter>();
 
@@ -91,6 +93,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI(c =>
     {
         c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+
     });
 }
 
@@ -234,6 +237,8 @@ app.MapGet("/signin", async (string email, string password, UserManager<Applicat
 
 
 app.MapControllers();
-app.UseStaticFiles();
-app.UseCors("AllowAll");
+app.UseStaticFiles(new StaticFileOptions()
+{
+    FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot"))
+}); app.UseCors("AllowAll");
 app.Run();

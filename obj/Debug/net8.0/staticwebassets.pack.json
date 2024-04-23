@@ -1,8 +1,52 @@
 {
   "Files": [
     {
-      "Id": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\My_New_Doc_222_id1006\\ldjdsljflksd_T_id_23_V_id_23_v_no_31.dita",
-      "PackagePath": "staticwebassets\\My_New_Doc_222_id1006\\ldjdsljflksd_T_id_23_V_id_23_v_no_31.dita"
+      "Id": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\My_first_Document_id1008\\1.0.0.0Analyst.ditamap",
+      "PackagePath": "staticwebassets\\My_first_Document_id1008\\1.0.0.0Analyst.ditamap"
+    },
+    {
+      "Id": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\My_first_Document_id1008\\1.0.0.0Developer.ditamap",
+      "PackagePath": "staticwebassets\\My_first_Document_id1008\\1.0.0.0Developer.ditamap"
+    },
+    {
+      "Id": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\My_first_Document_id1008\\1.0.0.0Technician.ditamap",
+      "PackagePath": "staticwebassets\\My_first_Document_id1008\\1.0.0.0Technician.ditamap"
+    },
+    {
+      "Id": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\My_first_Document_id1008\\1.0.0.0\\1.0.0.0Analyst.pdf",
+      "PackagePath": "staticwebassets\\My_first_Document_id1008\\1.0.0.0\\1.0.0.0Analyst.pdf"
+    },
+    {
+      "Id": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\My_first_Document_id1008\\1.0.0.0\\1.0.0.0Developer.pdf",
+      "PackagePath": "staticwebassets\\My_first_Document_id1008\\1.0.0.0\\1.0.0.0Developer.pdf"
+    },
+    {
+      "Id": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\My_first_Document_id1008\\1.0.0.0\\1.0.0.0Technician.pdf",
+      "PackagePath": "staticwebassets\\My_first_Document_id1008\\1.0.0.0\\1.0.0.0Technician.pdf"
+    },
+    {
+      "Id": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\My_first_Document_id1008\\1.0.0.0_Analyst.ditamap",
+      "PackagePath": "staticwebassets\\My_first_Document_id1008\\1.0.0.0_Analyst.ditamap"
+    },
+    {
+      "Id": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\My_first_Document_id1008\\1.0.0.0_Developer.ditamap",
+      "PackagePath": "staticwebassets\\My_first_Document_id1008\\1.0.0.0_Developer.ditamap"
+    },
+    {
+      "Id": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\My_first_Document_id1008\\1.0.0.0_Technician.ditamap",
+      "PackagePath": "staticwebassets\\My_first_Document_id1008\\1.0.0.0_Technician.ditamap"
+    },
+    {
+      "Id": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\My_first_Document_id1008\\Description_T_id_1031_V_id_1043_v_no_DC1.dita",
+      "PackagePath": "staticwebassets\\My_first_Document_id1008\\Description_T_id_1031_V_id_1043_v_no_DC1.dita"
+    },
+    {
+      "Id": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\My_first_Document_id1008\\Project_initialization_T_id_1032_V_id_1044_v_no_DC1.dita",
+      "PackagePath": "staticwebassets\\My_first_Document_id1008\\Project_initialization_T_id_1032_V_id_1044_v_no_DC1.dita"
+    },
+    {
+      "Id": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\My_first_Document_id1008\\Project_initialization_T_id_1032_V_id_1045_v_no_DC2.dita",
+      "PackagePath": "staticwebassets\\My_first_Document_id1008\\Project_initialization_T_id_1032_V_id_1045_v_no_DC2.dita"
     },
     {
       "Id": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\dtd\\bookmap.dtd",

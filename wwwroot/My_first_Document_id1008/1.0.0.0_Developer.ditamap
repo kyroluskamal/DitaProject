@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+                <!DOCTYPE map PUBLIC '-//OASIS//DTD DITA Map//EN' 'D:/IDDprojecct/AppConfgDocumentation/wwwroot/dtd/map.dtd'>
+                <map>
+                    <title>My first Document - V1.0.0.0</title>
+                    <topicref href='Description_T_id_1031_V_id_1043_v_no_DC1.dita' /><topicref href='Project_initialization_T_id_1032_V_id_1044_v_no_DC1.dita' />
+                </map>

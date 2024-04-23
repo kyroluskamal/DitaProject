@@ -35,7 +35,7 @@ namespace AppConfgDocumentation.Services
             //     throw new InvalidOperationException($"The XML content is not valid: {validationErrors}");
             // }
             var extension = fileExtension == DitaFileExtensions.dita ? ".dita" : ".ditamap";
-            string filePath = Path.Combine(_hostingEnvironment.WebRootPath, outputPath, $"{ReplaceInvalidChars(filename)}{extension}");
+            string filePath = Path.Combine(_hostingEnvironment.WebRootPath, outputPath, $"{ReplaceInvalidChars(filename)}{roleName}{extension}");
             File.WriteAllText(filePath, xmlContent);
             return filePath;
         }

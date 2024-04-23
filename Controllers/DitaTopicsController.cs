@@ -93,6 +93,10 @@ namespace AppConfgDocumentation.Controllers
                                 dv.VersionNumber,
                                 dv.CreatedAt,
                                 dv.DitaTopicId,
+                                Roles = dv.Roles.Select(x =>
+
+                                    x.RoleId
+                                ).ToList(),
                                 Type = dv is ConceptVersion ? 0 : dv is TaskVersion ? 1 : -1,
                                 body = dv is ConceptVersion ? ((ConceptVersion)dv).Body : null,
                                 steps = dv is TaskVersion ? ((TaskVersion)dv).Steps.Select(s => new
@@ -416,7 +420,7 @@ namespace AppConfgDocumentation.Controllers
             {
                 var result = new ReturnTypeOfDitaToics();
                 var ditaTopic = await _context.DitaTopics.Include(x => x.Document)
-                .Include(x => x.DitatopicVersions).FirstOrDefaultAsync(x => x.Id == topic.Id && x.DocumentId == topic.DocumentId);
+                .Include(x => x.DitatopicVersions).ThenInclude(r => r.Roles).FirstOrDefaultAsync(x => x.Id == topic.Id && x.DocumentId == topic.DocumentId);
 
                 if (ditaTopic == null)
                 {
@@ -586,6 +590,7 @@ namespace AppConfgDocumentation.Controllers
         private string GenerateXml(string id, string title, string shortdesc, string body, string type = "concept")
         {
             var shorsDesc = string.IsNullOrEmpty(shortdesc) ? "" : $"<shortdesc>{shortdesc}</shortdesc>";
+            id = id.Replace(" ", "_");
             return $@"<?xml version='1.0' encoding='UTF-8'?>
                 <!DOCTYPE {type} PUBLIC '-//OASIS//DTD DITA {char.ToUpper(type[0]) + type[1..]}//EN' '../dtd/{type}.dtd'>
                 <{type} id='{id}'>

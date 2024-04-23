@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+                <!DOCTYPE concept PUBLIC '-//OASIS//DTD DITA Concept//EN' '../dtd/concept.dtd'>
+                <concept id='Description_T_id_1031_V_id_1043_v_no_DC1'>
+                    <title>Description</title>
+                    <shortdesc>This is a simple description</shortdesc>
+                    <conbody>
+                        <p>This is a description</p>
+                    </conbody>
+                </concept>
+            
