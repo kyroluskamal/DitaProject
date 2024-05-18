@@ -28,7 +28,7 @@ namespace AppConfgDocumentation.Data
         public DbSet<DocVersionDitatopicVersion> DocVersionDitatopicVersions { get; set; }
         public DbSet<ConceptVersion> ConceptVersions { get; set; }
         public DbSet<TaskVersion> TaskVersions { get; set; }
-
+        public DbSet<DocFamily> DocFamilies { get; set; }
         public DbSet<DocVersionsRoles> DocVersionsRoles { get; set; }
         public DbSet<DitaTopicVersionsRoles> DitaTopicVersionsRoles { get; set; }
         // protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

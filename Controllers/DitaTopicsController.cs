@@ -17,7 +17,7 @@ namespace AppConfgDocumentation.Controllers
     //     public int versionId { get; set; }
     //     public string versionNumber { get; set; } = string.Empty;
     // }
-    delegate Task<ReturnTypeOfDitaToics> GetDitaObject(DitaTopicModelView topic);
+    delegate Task<ReturnTypeOfDitaToics> GetDitaObject(DitaTopicVersionViewModel topic);
     public class DitaTopicsController : Controller_Base
     {
         //add dbcontext
@@ -43,7 +43,8 @@ namespace AppConfgDocumentation.Controllers
                             dt.Id,
                             dt.Title,
                             dt.CreatedAt,
-                            dt.DocumentId,
+                            dt.DocFamilyId,
+                            dt.IsRequired,
                             // Type = dt is Concept ? 0 : dt is Tasks ? 1 : -1,
                             DitatopicVersions = dt.DitatopicVersions.Select(dv => new
                             {
@@ -83,7 +84,8 @@ namespace AppConfgDocumentation.Controllers
                             dt.Id,
                             dt.Title,
                             dt.CreatedAt,
-                            dt.DocumentId,
+                            dt.DocFamilyId,
+                            dt.IsRequired,
                             // Type = dt is Concept ? 0 : dt is Tasks ? 1 : -1,
                             DitatopicVersions = dt.DitatopicVersions.Select(dv => new
                             {
@@ -94,7 +96,6 @@ namespace AppConfgDocumentation.Controllers
                                 dv.CreatedAt,
                                 dv.DitaTopicId,
                                 Roles = dv.Roles.Select(x =>
-
                                     x.RoleId
                                 ).ToList(),
                                 Type = dv is ConceptVersion ? 0 : dv is TaskVersion ? 1 : -1,
@@ -111,7 +112,8 @@ namespace AppConfgDocumentation.Controllers
                             {
                                 x.RoleId,
                                 x.Role.Name,
-                            })
+                            }),
+
                         }).FirstOrDefaultAsync(x => x.Id == id);
             if (ditaTopic == null)
                 return NotFound(new { message = $"DITA topic with ID {id} not found" });
@@ -119,42 +121,114 @@ namespace AppConfgDocumentation.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] DitaTopicModelView topic)
+        private async Task<IActionResult> PostOne(DitaTopicModelView topic)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
-            ReturnTypeOfDitaToics result = new();
-            if (topic.Type == (int)DitaTopicTypes.Concept)
-                result = await AddUpdateDitaTopicAndVersions(topic, AddConcept);
-            else
-                result = await AddUpdateDitaTopicAndVersions(topic, AddTask);
 
-            return result.Code == 0 ? BadRequest(new { message = result.Message }) :
-                Ok(new { message = result.Message, data = ((OkObjectResult)GetDitaTopicById(result.Ditatopic?.Id).GetAwaiter().GetResult()).Value });
+            var dt = new DitaTopic { Title = topic.Title, DocFamilyId = topic.DocFamilyId, IsRequired = topic.IsRequired };
+            try
+            {
+                await _context.DitaTopics.AddAsync(dt);
+                await _context.SaveChangesAsync();
+                return Ok(new { message = "Dita topic is added successfully", data = ((OkObjectResult)GetDitaTopicById(dt.Id).GetAwaiter().GetResult()).Value });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
         }
+        [HttpPost]
+        public async Task<IActionResult> Post([FromBody] List<DitaTopicModelView> topics)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+            var dts = new List<DitaTopic>();
+            foreach (var topic in topics)
+            {
+                dts.Add(new DitaTopic { Title = topic.Title, DocFamilyId = topic.DocFamilyId, IsRequired = topic.IsRequired });
+            }
+            try
+            {
+                await _context.DitaTopics.AddRangeAsync(dts);
+                await _context.SaveChangesAsync();
+                return Ok(new { message = "Dita topic is added successfully", data = dts });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+        }
+        // public async Task<IActionResult> Post([FromBody] DitaTopicModelView topic)
+        // {
+        //     if (!ModelState.IsValid)
+        //         return BadRequest(ModelState);
+        //     ReturnTypeOfDitaToics result = new();
+        //     if (topic.Type == (int)DitaTopicTypes.Concept)
+        //         result = await AddUpdateDitaTopicAndVersions(topic, AddConcept);
+        //     else
+        //         result = await AddUpdateDitaTopicAndVersions(topic, AddTask);
+
+        //     return result.Code == 0 ? BadRequest(new { message = result.Message }) :
+        //         Ok(new { message = result.Message, data = ((OkObjectResult)GetDitaTopicById(result.Ditatopic?.Id).GetAwaiter().GetResult()).Value });
+        // }
 
         // PUT: api/DitaTopics/{id}
         [HttpPut("{id}")]
-        public async Task<IActionResult> Put([FromRoute] int id, [FromBody] DitaTopicUpdateViewModel topic)
+        public async Task<IActionResult> Put([FromRoute] int id, [FromBody] DitaTopicModelView topic)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
-
-            var newTopic = new DitaTopicModelView
+            try
             {
-                Id = id,
-                Title = topic.Title,
-                DocumentId = topic.DocumentId,
-            };
-            var result = await AddUpdateDitaTopicAndVersions(newTopic, UpdateDitaTopic, isUpdate: true);
+                var ditaTopic = await _context.DitaTopics.Include(x => x.DocFamily).FirstOrDefaultAsync(x => x.Id == id);
+                if (ditaTopic == null)
+                    return NotFound(new { message = $"DITA topic with ID {id} not found" });
 
-            return result.Code == 0 ? BadRequest(new { message = result.Message })
-                    : Ok(new { message = result.Message, data = ((OkObjectResult)GetDitaTopicById(result.Ditatopic?.Id).GetAwaiter().GetResult()).Value });
+                ditaTopic.Title = topic.Title;
+                ditaTopic.DocFamilyId = topic.DocFamilyId;
+                ditaTopic.IsRequired = topic.IsRequired;
+                await _context.SaveChangesAsync();
+                return Ok(new { message = "Dita topic is updated Successfylly ", data = ((OkObjectResult)GetDitaTopicById(ditaTopic.Id).GetAwaiter().GetResult()).Value });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+        }
+        [HttpPut]
+        public async Task<IActionResult> Put([FromBody] List<DitaTopicModelView> topics)
+        {
+            try
+            {
+                using var transaction = await _context.Database.BeginTransactionAsync();
+                foreach (var topic in topics)
+                {
+                    var ditaTopic = await _context.DitaTopics.FirstOrDefaultAsync(x => x.Id == topic.Id);
+                    if (ditaTopic == null)
+                        await PostOne(topic);
+                    else
+                    {
+                        ditaTopic.Title = topic.Title;
+                        ditaTopic.DocFamilyId = topic.DocFamilyId;
+                        ditaTopic.IsRequired = topic.IsRequired;
+                        ditaTopic.IsRequired = topic.IsRequired;
+                        await _context.SaveChangesAsync();
+                    }
+                }
+                await transaction.CommitAsync();
+                var ditaTopics = await _context.DitaTopics.Include(x => x.DocFamily).Where(x => x.DocFamilyId == topics[0].DocFamilyId).ToListAsync();
+                return Ok(new { message = "Dita topic is updated Successfylly ", data = ditaTopics });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
         }
 
         // DELETE: api/DitaTopics/{id}
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete([FromRoute] int id, [FromQuery] int docId)
+        public async Task<IActionResult> Delete([FromRoute] int id)
         {
             try
             {
@@ -183,7 +257,7 @@ namespace AppConfgDocumentation.Controllers
         {
             var version = await _context.DitatopicVersions
                         .Include(x => x.DitaTopic)
-                        .ThenInclude(x => x.Document)
+                        .ThenInclude(x => x.DocFamily)
                         .Select(dv => new
                         {
                             dv.Id,
@@ -217,19 +291,19 @@ namespace AppConfgDocumentation.Controllers
                 return BadRequest(ModelState);
             var result = new ReturnTypeOfDitaToics();
 
-            var ditaTopicViewModel = new DitaTopicModelView
-            {
-                Id = ditaTopicVersion.DitaTopicId,
-                VersionId = ditaTopicVersion.Id,
-                // DitaTopicId = ditaTopicVersion.DitaTopicId,
-                ShortDescription = ditaTopicVersion.ShortDescription,
-                VersionNumber = ditaTopicVersion.VersionNumber,
-                Type = ditaTopicVersion.Type,
-                Body = ditaTopicVersion.Body,
-                Steps = ditaTopicVersion.Steps,
-                Roles = ditaTopicVersion.Roles
-            };
-            result = await AddUpdateDitaTopicAndVersions(ditaTopicViewModel, AddDitaTopicVersion);
+            // var ditaTopicViewModel = new DitaTopicVersionViewModel
+            // {
+            //     Id = ditaTopicVersion.DitaTopicId,
+            //     VersionId = ditaTopicVersion.Id,
+            //     DitaTopicId = ditaTopicVersion.DitaTopicId,
+            //     ShortDescription = ditaTopicVersion.ShortDescription,
+            //     VersionNumber = ditaTopicVersion.VersionNumber,
+            //     Type = ditaTopicVersion.Type,
+            //     Body = ditaTopicVersion.Body,
+            //     Steps = ditaTopicVersion.Steps,
+            //     Roles = ditaTopicVersion.Roles
+            // };
+            result = await AddUpdateDitaTopicAndVersions(ditaTopicVersion, AddDitaTopicVersion);
 
             return result.Code == 0 ? BadRequest(new { message = result.Message }) :
                 Ok(new { message = result.Message, data = result.DitatopicVersion });
@@ -241,18 +315,19 @@ namespace AppConfgDocumentation.Controllers
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
-            var ditaTopicViewModel = new DitaTopicModelView
-            {
-                Id = ditaTopicVersion.DitaTopicId,
-                VersionId = id,
-                // DitaTopicId = ditaTopicVersion.DitaTopicId,
-                ShortDescription = ditaTopicVersion.ShortDescription,
-                VersionNumber = ditaTopicVersion.VersionNumber,
-                Type = ditaTopicVersion.Type,
-                Body = ditaTopicVersion.Body,
-                Steps = ditaTopicVersion.Steps,
-                Roles = ditaTopicVersion.Roles
-            }; var result = await AddUpdateDitaTopicAndVersions(ditaTopicViewModel, UpdateDitaTopicVersion, isUpdate: true);
+            // var ditaTopicViewModel = new DitaTopicModelView
+            // {
+            //     Id = ditaTopicVersion.DitaTopicId,
+            //     VersionId = id,
+            //     // DitaTopicId = ditaTopicVersion.DitaTopicId,
+            //     ShortDescription = ditaTopicVersion.ShortDescription,
+            //     VersionNumber = ditaTopicVersion.VersionNumber,
+            //     Type = ditaTopicVersion.Type,
+            //     Body = ditaTopicVersion.Body,
+            //     Steps = ditaTopicVersion.Steps,
+            //     Roles = ditaTopicVersion.Roles
+            // }; 
+            var result = await AddUpdateDitaTopicAndVersions(ditaTopicVersion, UpdateDitaTopicVersion, isUpdate: true);
             var dtVersion = await _context.DitatopicVersions.Include(x => x.DitaTopic).FirstOrDefaultAsync(x => x.Id == id);
             return result.Code == 0 ? BadRequest(new { message = result.Message }) :
                 Ok(new
@@ -312,7 +387,7 @@ namespace AppConfgDocumentation.Controllers
         {
             var versions = await _context.DitatopicVersions
                         .Include(x => x.DitaTopic)
-                        .ThenInclude(x => x.Document)
+                        .ThenInclude(x => x.DocFamily)
                         .Select(dv => new
                         {
                             dv.Id,
@@ -336,19 +411,19 @@ namespace AppConfgDocumentation.Controllers
                 return NotFound(new { message = $"DITA topic with ID {id} not found" });
             return Ok(versions);
         }
-        private async Task<ReturnTypeOfDitaToics> AddUpdateDitaTopicAndVersions(DitaTopicModelView topic, GetDitaObject ditaObject, bool isUpdate = false)
+        private async Task<ReturnTypeOfDitaToics> AddUpdateDitaTopicAndVersions(DitaTopicVersionViewModel topic, GetDitaObject ditaObject, bool isUpdate = false)
         {
             var result = new ReturnTypeOfDitaToics();
             try
             {
-                var doc = await _context.Documentos.Include(x => x.DitaTopics).FirstOrDefaultAsync(x => x.Id == topic.DocumentId);
+                var family = await _context.DocFamilies.Include(x => x.DitaTopics).FirstOrDefaultAsync(x => x.Id == topic.DocFamilyId);
                 using var transaction = await _context.Database.BeginTransactionAsync();
 
                 result = await ditaObject(topic);
                 if (result.DitatopicVersion != null)
                 {
                     if (isUpdate) System.IO.File.Delete(result.DitatopicVersion.FilePath);
-                    UpdateFileNameAndPathInDitatopicVersion(result.DitatopicVersion, result.Ditatopic!, (string)(doc != null ? doc?.FolderName! : result.Ditatopic!.Document?.FolderName!));
+                    UpdateFileNameAndPathInDitatopicVersion(result.DitatopicVersion, result.Ditatopic!, (string)(family != null ? family?.FolderName! : result.Ditatopic!.DocFamily?.FolderName!));
                 }
 
                 await _context.SaveChangesAsync();
@@ -363,107 +438,107 @@ namespace AppConfgDocumentation.Controllers
             }
         }
 
-        private async Task<ReturnTypeOfDitaToics> AddConcept(DitaTopicModelView topic)
-        {
-            var concept = new DitaTopic
-            {
-                Title = topic.Title,
-                DocumentId = topic.DocumentId,
-            };
-            var version = new ConceptVersion
-            {
-                VersionNumber = topic.VersionNumber,
-                ShortDescription = topic.ShortDescription,
-                Body = topic.Body,
-                Roles = topic.Roles.Select(x => new DitaTopicVersionsRoles { RoleId = x }).ToList()
+        // private async Task<ReturnTypeOfDitaToics> AddConcept(DitaTopicModelView topic)
+        // {
+        //     var concept = new DitaTopic
+        //     {
+        //         Title = topic.Title,
+        //         DocFamilyId = topic.DocFamilyId,
+        //     };
+        //     var version = new ConceptVersion
+        //     {
+        //         VersionNumber = topic.VersionNumber,
+        //         ShortDescription = topic.ShortDescription,
+        //         Body = topic.Body,
+        //         Roles = topic.Roles.Select(x => new DitaTopicVersionsRoles { RoleId = x }).ToList()
+        //     };
+        //     concept.DitatopicVersions.Add(version);
+        //     var result = await AddDitaTopic(concept);
 
-            };
-            concept.DitatopicVersions.Add(version);
-            var result = await AddDitaTopic(concept);
+        //     if (result.Code == 0)
+        //         result.Message = "Failed to create Dita concept";
+        //     else
+        //     {
+        //         result.Message = "Dita concept created successfully";
+        //     }
+        //     return result;
+        // }
 
-            if (result.Code == 0)
-                result.Message = "Failed to create Dita concept";
-            else
-            {
-                result.Message = "Dita concept created successfully";
-            }
-            return result;
-        }
+        // private async Task<ReturnTypeOfDitaToics> AddTask(DitaTopicModelView topic)
+        // {
+        //     var task = new DitaTopic
+        //     {
+        //         Title = topic.Title,
+        //         DocFamilyId = topic.DocFamilyId
+        //     };
+        //     var version = new TaskVersion
+        //     {
+        //         ShortDescription = topic.ShortDescription,
+        //         VersionNumber = topic.VersionNumber,
+        //         Roles = topic.Roles.Select(x => new DitaTopicVersionsRoles { RoleId = x }).ToList()
+        //     };
+        //     foreach (var step in topic.Steps)
+        //         version.Steps.Add(new Step { Order = step.Order, Command = step.Command });
+        //     task.DitatopicVersions.Add(version);
+        //     var result = await AddDitaTopic(task);
+        //     if (result.Code == 0)
+        //         result.Message = "Failed to create Dita task";
+        //     else result.Message = "Dita task created successfully";
 
-        private async Task<ReturnTypeOfDitaToics> AddTask(DitaTopicModelView topic)
-        {
-            var task = new DitaTopic
-            {
-                Title = topic.Title,
-                DocumentId = topic.DocumentId
-            };
-            var version = new TaskVersion
-            {
-                ShortDescription = topic.ShortDescription,
-                VersionNumber = topic.VersionNumber,
-                Roles = topic.Roles.Select(x => new DitaTopicVersionsRoles { RoleId = x }).ToList()
-            };
-            foreach (var step in topic.Steps)
-                version.Steps.Add(new Step { Order = step.Order, Command = step.Command });
-            task.DitatopicVersions.Add(version);
-            var result = await AddDitaTopic(task);
-            if (result.Code == 0)
-                result.Message = "Failed to create Dita task";
-            else result.Message = "Dita task created successfully";
+        //     return result;
+        // }
 
-            return result;
-        }
+        // private async Task<ReturnTypeOfDitaToics> UpdateDitaTopic(DitaTopicModelView topic)
+        // {
+        //     try
+        //     {
+        //         var result = new ReturnTypeOfDitaToics();
+        //         var ditaTopic = await _context.DitaTopics.Include(x => x.DocFamily)
 
-        private async Task<ReturnTypeOfDitaToics> UpdateDitaTopic(DitaTopicModelView topic)
-        {
-            try
-            {
-                var result = new ReturnTypeOfDitaToics();
-                var ditaTopic = await _context.DitaTopics.Include(x => x.Document)
-                .Include(x => x.DitatopicVersions).ThenInclude(r => r.Roles).FirstOrDefaultAsync(x => x.Id == topic.Id && x.DocumentId == topic.DocumentId);
+        //         .Include(x => x.DitatopicVersions).ThenInclude(r => r.Roles).FirstOrDefaultAsync(x => x.Id == topic.Id && x.DocFamilyId == topic.DocFamilyId);
 
-                if (ditaTopic == null)
-                {
-                    result.Code = 0;
-                    result.Message = "Dita topic not found";
-                    return result;
-                }
+        //         if (ditaTopic == null)
+        //         {
+        //             result.Code = 0;
+        //             result.Message = "Dita topic not found";
+        //             return result;
+        //         }
 
-                ditaTopic.Title = topic.Title;
+        //         ditaTopic.Title = topic.Title;
 
-                result.Code = await _context.SaveChangesAsync();
+        //         result.Code = await _context.SaveChangesAsync();
 
-                foreach (var version in ditaTopic.DitatopicVersions)
-                {
-                    var versiosnPath = $"{_hostingEnvironment.WebRootPath}\\{ditaTopic.Document?.FolderName}\\{_ditaFileCreationService.ReplaceInvalidChars(version.FileName)}.dita";
+        //         foreach (var version in ditaTopic.DitatopicVersions)
+        //         {
+        //             var versiosnPath = $"{_hostingEnvironment.WebRootPath}\\{ditaTopic.Document?.FolderName}\\{_ditaFileCreationService.ReplaceInvalidChars(version.FileName)}.dita";
 
-                    System.IO.File.Delete(versiosnPath);
-                    if (version is TaskVersion)
-                    {
-                        (version as TaskVersion).Steps = _context.Steps.Where(x => x.TaskVersionId == version.Id).ToList();
-                    }
-                    UpdateFileNameAndPathInDitatopicVersion(version, ditaTopic, ditaTopic.Document?.FolderName!);
-                }
-                result.Code = await _context.SaveChangesAsync();
-                result.Ditatopic = ditaTopic;
-                result.DitatopicVersion = null;
-                if (result.Code == 0)
-                {
-                    result.Message = "Failed to update Dita topic";
-                    return result;
-                }
-                result.Message = "Dita topic updated successfully";
-                return result;
-            }
-            catch (Exception ex)
-            {
-                return new ReturnTypeOfDitaToics { Code = 0, Message = ex.Message };
-            }
-        }
-        private async Task<ReturnTypeOfDitaToics> AddDitaTopicVersion(DitaTopicModelView ditaTopicModelView)
+        //             System.IO.File.Delete(versiosnPath);
+        //             if (version is TaskVersion)
+        //             {
+        //                 (version as TaskVersion).Steps = _context.Steps.Where(x => x.TaskVersionId == version.Id).ToList();
+        //             }
+        //             UpdateFileNameAndPathInDitatopicVersion(version, ditaTopic, ditaTopic.Document?.FolderName!);
+        //         }
+        //         result.Code = await _context.SaveChangesAsync();
+        //         result.Ditatopic = ditaTopic;
+        //         result.DitatopicVersion = null;
+        //         if (result.Code == 0)
+        //         {
+        //             result.Message = "Failed to update Dita topic";
+        //             return result;
+        //         }
+        //         result.Message = "Dita topic updated successfully";
+        //         return result;
+        //     }
+        //     catch (Exception ex)
+        //     {
+        //         return new ReturnTypeOfDitaToics { Code = 0, Message = ex.Message };
+        //     }
+        // }
+        private async Task<ReturnTypeOfDitaToics> AddDitaTopicVersion(DitaTopicVersionViewModel ditaTopicModelView)
         {
             var result = new ReturnTypeOfDitaToics();
-            var ditaTopic = await _context.DitaTopics.Include(x => x.Document).FirstOrDefaultAsync(x => x.Id == ditaTopicModelView.Id);
+            var ditaTopic = await _context.DitaTopics.Include(x => x.DocFamily).FirstOrDefaultAsync(x => x.Id == ditaTopicModelView.DitaTopicId);
 
             if (ditaTopic == null)
             {
@@ -479,10 +554,9 @@ namespace AppConfgDocumentation.Controllers
                 {
                     ShortDescription = ditaTopicModelView.ShortDescription,
                     VersionNumber = ditaTopicModelView.VersionNumber,
-                    DitaTopicId = ditaTopicModelView.Id,
+                    DitaTopicId = ditaTopicModelView.DitaTopicId,
                     Body = ditaTopicModelView.Body,
                 };
-
             }
             else
             {
@@ -490,7 +564,7 @@ namespace AppConfgDocumentation.Controllers
                 {
                     ShortDescription = ditaTopicModelView.ShortDescription,
                     VersionNumber = ditaTopicModelView.VersionNumber,
-                    DitaTopicId = ditaTopicModelView.Id,
+                    DitaTopicId = ditaTopicModelView.DitaTopicId,
                     Steps = ditaTopicModelView.Steps.Select(x => new Step
                     {
                         Order = x.Order,
@@ -510,13 +584,13 @@ namespace AppConfgDocumentation.Controllers
             return result;
         }
 
-        private async Task<ReturnTypeOfDitaToics> UpdateDitaTopicVersion(DitaTopicModelView ditaTopicModelView)
+        private async Task<ReturnTypeOfDitaToics> UpdateDitaTopicVersion(DitaTopicVersionViewModel ditaTopicModelView)
         {
             var result = new ReturnTypeOfDitaToics();
             var version = await _context.DitatopicVersions.
             Include(x => x.DitaTopic)
-            .ThenInclude(x => x.Document)
-            .FirstOrDefaultAsync(x => x.Id == ditaTopicModelView.VersionId);
+            .ThenInclude(x => x.DocFamily)
+            .FirstOrDefaultAsync(x => x.Id == ditaTopicModelView.Id);
             if (version == null)
             {
                 result.Code = 0;
@@ -546,9 +620,9 @@ namespace AppConfgDocumentation.Controllers
                     });
                 }
             }
-            var doc = _context.DitaTopicVersionsRoles.Where(x => x.DitatopicVersionId == version.Id).ToList();
+            var DocRoles = _context.DitaTopicVersionsRoles.Where(x => x.DitatopicVersionId == version.Id).ToList();
 
-            _context.DitaTopicVersionsRoles.RemoveRange(doc);
+            _context.DitaTopicVersionsRoles.RemoveRange(DocRoles);
             result.Code = await _context.SaveChangesAsync();
             //update version roles
             var roles = ditaTopicModelView.Roles.Select(x => new DitaTopicVersionsRoles { RoleId = x }).ToList();
@@ -561,20 +635,20 @@ namespace AppConfgDocumentation.Controllers
             return result;
         }
 
-        private async Task<ReturnTypeOfDitaToics> AddDitaTopic(DitaTopic topic)
-        {
-            try
-            {
-                await _context.DitaTopics.AddAsync(topic);
-                await _context.SaveChangesAsync();
+        // private async Task<ReturnTypeOfDitaToics> AddDitaTopic(DitaTopic topic)
+        // {
+        //     try
+        //     {
+        //         await _context.DitaTopics.AddAsync(topic);
+        //         await _context.SaveChangesAsync();
 
-                return new ReturnTypeOfDitaToics { Code = 1, Ditatopic = topic, DitatopicVersion = topic.DitatopicVersions.FirstOrDefault() };
-            }
-            catch (Exception ex)
-            {
-                return new ReturnTypeOfDitaToics { Code = 0, Message = ex.Message };
-            }
-        }
+        //         return new ReturnTypeOfDitaToics { Code = 1, Ditatopic = topic, DitatopicVersion = topic.DitatopicVersions.FirstOrDefault() };
+        //     }
+        //     catch (Exception ex)
+        //     {
+        //         return new ReturnTypeOfDitaToics { Code = 0, Message = ex.Message };
+        //     }
+        // }
 
 
         private void UpdateFileNameAndPathInDitatopicVersion(DitatopicVersion version, dynamic ditaTopic, dynamic? docFolderName)

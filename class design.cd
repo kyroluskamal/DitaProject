@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="AppConfgDocumentation.Models.CommonModel" Collapsed="true">
+    <Position X="8" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\CommonModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AppConfgDocumentation.Models.DitaTopic">
+    <Position X="4.5" Y="2.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAEAAAiAAAAAgAAAAAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>Models\DitaTopic.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="DitatopicVersions" />
+      <Property Name="DocFamily" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="AppConfgDocumentation.Models.DitatopicVersion" Collapsed="true">
+    <Position X="10.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAEAAACAAAQAgAgAgAAAAAABAAABAAEA=</HashCode>
+      <FileName>Models\DitaTopic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AppConfgDocumentation.Models.ConceptVersion" Collapsed="true">
+    <Position X="13.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\DitaTopic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AppConfgDocumentation.Models.TaskVersion" Collapsed="true">
+    <Position X="8.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\DitaTopic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AppConfgDocumentation.Models.ReferenceVersion" Collapsed="true">
+    <Position X="10.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\DitaTopic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AppConfgDocumentation.Models.Step">
+    <Position X="6.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAEAABAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Models\DitaTopic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AppConfgDocumentation.Models.DitaTopicVersionsRoles">
+    <Position X="14.25" Y="2" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAEAAAAAAAAAAAABAAAAAAAAIAAAA=</HashCode>
+      <FileName>Models\DitaTopic.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="DitatopicVersion" />
+      <Property Name="Role" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Microsoft.AspNetCore.Identity.IdentityRole&lt;TKey&gt;" Collapsed="true">
+    <Position X="19.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="AppConfgDocumentation.Models.DocFamily">
+    <Position X="1.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAABAEgAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\DocFamily.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="DitaTopics" />
+    </ShowAsAssociation>
+  </Class>
+  <Interface Name="System.Collections.Generic.ICollection&lt;T&gt;" Collapsed="true">
+    <Position X="4.5" Y="7.25" Width="2.75" />
+    <TypeIdentifier />
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

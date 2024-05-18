@@ -11,8 +11,12 @@ namespace AppConfgDocumentation.Models
         [ForeignKey(nameof(AuthorId))]
         public int AuthorId { get; set; }
         public virtual ApplicationUser? Author { get; set; }
+        [ForeignKey(nameof(DocFamilyId))]
+        public int DocFamilyId { get; set; }
+        public virtual DocFamily? DocFamily { get; set; }
+
         public string FolderName { get; set; } = string.Empty;
-        public virtual ICollection<DitaTopic> DitaTopics { get; set; } = [];
+        // public virtual ICollection<DitaTopic> DitaTopics { get; set; } = [];
 
         public virtual ICollection<DocVersion> DocVersions { get; set; } = [];
     }

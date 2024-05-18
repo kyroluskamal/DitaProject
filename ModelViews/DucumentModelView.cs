@@ -7,6 +7,7 @@ namespace AppConfgDocumentation.ModelViews
         public string Title { get; set; } = string.Empty;
         public int AuthorId { get; set; }
         public string VersionNumber { get; set; } = string.Empty;
+        public int DocFamilyId { get; set; }
     }
 
     public record DocumentUpdateViewModel(string Title);

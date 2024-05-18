@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "lxSYW4XSPtZhYTEMmcQVPtOwq5WAputdLlBrfXeqtVk=",
+  "Hash": "u2ZPbybVeyDVlZrKCAQId+0YtDveD1yuRLzo3e9cQUQ=",
   "Source": "AppConfgDocumentation",
   "BasePath": "_content/AppConfgDocumentation",
   "Mode": "Default",
@@ -701,12 +701,12 @@
       "OriginalItemSpec": "wwwroot\\dtd\\xnalDomain.mod"
     },
     {
-      "Identity": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\My_first_Document_id1008\\1.0.0.0_Analyst.ditamap",
+      "Identity": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\My_first_familygdfgdgd_id13\\Description_T_id_2_V_id_7_v_no_vvc.dita",
       "SourceId": "AppConfgDocumentation",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\",
       "BasePath": "_content/AppConfgDocumentation",
-      "RelativePath": "My_first_Document_id1008/1.0.0.0_Analyst.ditamap",
+      "RelativePath": "My_first_familygdfgdgd_id13/Description_T_id_2_V_id_7_v_no_vvc.dita",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -717,15 +717,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\My_first_Document_id1008\\1.0.0.0_Analyst.ditamap"
+      "OriginalItemSpec": "wwwroot\\My_first_familygdfgdgd_id13\\Description_T_id_2_V_id_7_v_no_vvc.dita"
     },
     {
-      "Identity": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\My_first_Document_id1008\\1.0.0.0_Developer.ditamap",
+      "Identity": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\My_first_familygdfgdgd_id13\\fsdfs_T_id_4_V_id_1005_v_no_fs.dita",
       "SourceId": "AppConfgDocumentation",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\",
       "BasePath": "_content/AppConfgDocumentation",
-      "RelativePath": "My_first_Document_id1008/1.0.0.0_Developer.ditamap",
+      "RelativePath": "My_first_familygdfgdgd_id13/fsdfs_T_id_4_V_id_1005_v_no_fs.dita",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -736,15 +736,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\My_first_Document_id1008\\1.0.0.0_Developer.ditamap"
+      "OriginalItemSpec": "wwwroot\\My_first_familygdfgdgd_id13\\fsdfs_T_id_4_V_id_1005_v_no_fs.dita"
     },
     {
-      "Identity": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\My_first_Document_id1008\\1.0.0.0_Technician.ditamap",
+      "Identity": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\My_first_familygdfgdgd_id13\\jljlkjlkjlkjkljkljkl_T_id_6_V_id_1006_v_no_fsfs.dita",
       "SourceId": "AppConfgDocumentation",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\",
       "BasePath": "_content/AppConfgDocumentation",
-      "RelativePath": "My_first_Document_id1008/1.0.0.0_Technician.ditamap",
+      "RelativePath": "My_first_familygdfgdgd_id13/jljlkjlkjlkjkljkljkl_T_id_6_V_id_1006_v_no_fsfs.dita",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -755,15 +755,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\My_first_Document_id1008\\1.0.0.0_Technician.ditamap"
+      "OriginalItemSpec": "wwwroot\\My_first_familygdfgdgd_id13\\jljlkjlkjlkjkljkljkl_T_id_6_V_id_1006_v_no_fsfs.dita"
     },
     {
-      "Identity": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\My_first_Document_id1008\\1.0.0.0\\1.0.0.0Analyst.pdf",
+      "Identity": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\My_first_familygdfgdgd_id13\\My_first_doc_id2\\1.0\\1.0Analyst.pdf",
       "SourceId": "AppConfgDocumentation",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\",
       "BasePath": "_content/AppConfgDocumentation",
-      "RelativePath": "My_first_Document_id1008/1.0.0.0/1.0.0.0Analyst.pdf",
+      "RelativePath": "My_first_familygdfgdgd_id13/My_first_doc_id2/1.0/1.0Analyst.pdf",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -774,15 +774,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\My_first_Document_id1008\\1.0.0.0\\1.0.0.0Analyst.pdf"
+      "OriginalItemSpec": "wwwroot\\My_first_familygdfgdgd_id13\\My_first_doc_id2\\1.0\\1.0Analyst.pdf"
     },
     {
-      "Identity": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\My_first_Document_id1008\\1.0.0.0\\1.0.0.0Developer.pdf",
+      "Identity": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\My_first_familygdfgdgd_id13\\My_first_doc_id2\\1.0\\1.0Developer.pdf",
       "SourceId": "AppConfgDocumentation",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\",
       "BasePath": "_content/AppConfgDocumentation",
-      "RelativePath": "My_first_Document_id1008/1.0.0.0/1.0.0.0Developer.pdf",
+      "RelativePath": "My_first_familygdfgdgd_id13/My_first_doc_id2/1.0/1.0Developer.pdf",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -793,15 +793,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\My_first_Document_id1008\\1.0.0.0\\1.0.0.0Developer.pdf"
+      "OriginalItemSpec": "wwwroot\\My_first_familygdfgdgd_id13\\My_first_doc_id2\\1.0\\1.0Developer.pdf"
     },
     {
-      "Identity": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\My_first_Document_id1008\\1.0.0.0\\1.0.0.0Technician.pdf",
+      "Identity": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\My_first_familygdfgdgd_id13\\My_first_doc_id2\\1.0\\1.0Technician.pdf",
       "SourceId": "AppConfgDocumentation",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\",
       "BasePath": "_content/AppConfgDocumentation",
-      "RelativePath": "My_first_Document_id1008/1.0.0.0/1.0.0.0Technician.pdf",
+      "RelativePath": "My_first_familygdfgdgd_id13/My_first_doc_id2/1.0/1.0Technician.pdf",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -812,15 +812,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\My_first_Document_id1008\\1.0.0.0\\1.0.0.0Technician.pdf"
+      "OriginalItemSpec": "wwwroot\\My_first_familygdfgdgd_id13\\My_first_doc_id2\\1.0\\1.0Technician.pdf"
     },
     {
-      "Identity": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\My_first_Document_id1008\\1.0.0.0Analyst.ditamap",
+      "Identity": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\My_first_familygdfgdgd_id13\\My_first_doc_id2\\1.0Analyst.ditamap",
       "SourceId": "AppConfgDocumentation",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\",
       "BasePath": "_content/AppConfgDocumentation",
-      "RelativePath": "My_first_Document_id1008/1.0.0.0Analyst.ditamap",
+      "RelativePath": "My_first_familygdfgdgd_id13/My_first_doc_id2/1.0Analyst.ditamap",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -831,15 +831,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\My_first_Document_id1008\\1.0.0.0Analyst.ditamap"
+      "OriginalItemSpec": "wwwroot\\My_first_familygdfgdgd_id13\\My_first_doc_id2\\1.0Analyst.ditamap"
     },
     {
-      "Identity": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\My_first_Document_id1008\\1.0.0.0Developer.ditamap",
+      "Identity": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\My_first_familygdfgdgd_id13\\My_first_doc_id2\\1.0Developer.ditamap",
       "SourceId": "AppConfgDocumentation",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\",
       "BasePath": "_content/AppConfgDocumentation",
-      "RelativePath": "My_first_Document_id1008/1.0.0.0Developer.ditamap",
+      "RelativePath": "My_first_familygdfgdgd_id13/My_first_doc_id2/1.0Developer.ditamap",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -850,15 +850,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\My_first_Document_id1008\\1.0.0.0Developer.ditamap"
+      "OriginalItemSpec": "wwwroot\\My_first_familygdfgdgd_id13\\My_first_doc_id2\\1.0Developer.ditamap"
     },
     {
-      "Identity": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\My_first_Document_id1008\\1.0.0.0Technician.ditamap",
+      "Identity": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\My_first_familygdfgdgd_id13\\My_first_doc_id2\\1.0Technician.ditamap",
       "SourceId": "AppConfgDocumentation",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\",
       "BasePath": "_content/AppConfgDocumentation",
-      "RelativePath": "My_first_Document_id1008/1.0.0.0Technician.ditamap",
+      "RelativePath": "My_first_familygdfgdgd_id13/My_first_doc_id2/1.0Technician.ditamap",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -869,64 +869,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\My_first_Document_id1008\\1.0.0.0Technician.ditamap"
-    },
-    {
-      "Identity": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\My_first_Document_id1008\\Description_T_id_1031_V_id_1043_v_no_DC1.dita",
-      "SourceId": "AppConfgDocumentation",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\",
-      "BasePath": "_content/AppConfgDocumentation",
-      "RelativePath": "My_first_Document_id1008/Description_T_id_1031_V_id_1043_v_no_DC1.dita",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\My_first_Document_id1008\\Description_T_id_1031_V_id_1043_v_no_DC1.dita"
-    },
-    {
-      "Identity": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\My_first_Document_id1008\\Project_initialization_T_id_1032_V_id_1044_v_no_DC1.dita",
-      "SourceId": "AppConfgDocumentation",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\",
-      "BasePath": "_content/AppConfgDocumentation",
-      "RelativePath": "My_first_Document_id1008/Project_initialization_T_id_1032_V_id_1044_v_no_DC1.dita",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\My_first_Document_id1008\\Project_initialization_T_id_1032_V_id_1044_v_no_DC1.dita"
-    },
-    {
-      "Identity": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\My_first_Document_id1008\\Project_initialization_T_id_1032_V_id_1045_v_no_DC2.dita",
-      "SourceId": "AppConfgDocumentation",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\IDDprojecct\\AppConfgDocumentation\\wwwroot\\",
-      "BasePath": "_content/AppConfgDocumentation",
-      "RelativePath": "My_first_Document_id1008/Project_initialization_T_id_1032_V_id_1045_v_no_DC2.dita",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\My_first_Document_id1008\\Project_initialization_T_id_1032_V_id_1045_v_no_DC2.dita"
+      "OriginalItemSpec": "wwwroot\\My_first_familygdfgdgd_id13\\My_first_doc_id2\\1.0Technician.ditamap"
     }
   ]
 }

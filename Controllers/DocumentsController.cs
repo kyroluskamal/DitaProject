@@ -32,7 +32,8 @@ namespace AppConfgDocumentation.Controllers
             var documents = await _dbContext.Documentos.Include(f => f.Author).Include(x => x.DocVersions)
                 .ThenInclude(c => c.Roles)
                 .ThenInclude(c => c.Role)
-                .Include(x => x.DitaTopics)
+                .Include(x => x.DocFamily)
+                .ThenInclude(x => x.DitaTopics)
                 .ThenInclude(c => c.DitatopicVersions)
                 .ThenInclude(c => c.Roles)
                 .ToListAsync();
@@ -45,11 +46,10 @@ namespace AppConfgDocumentation.Controllers
             var document = await _dbContext.Documentos.Include(f => f.Author).Include(x => x.DocVersions)
              .ThenInclude(c => c.Roles)
                 .ThenInclude(c => c.Role)
-                .Include(x => x.DitaTopics)
+                .Include(x => x.DocFamily)
+                .ThenInclude(x => x.DitaTopics)
                 .ThenInclude(c => c.DitatopicVersions)
                 .ThenInclude(c => c.Roles)
- .Include(x => x.DitaTopics)
-                .ThenInclude(c => c.DitatopicVersions).ThenInclude(f => f.DitaTopic)
                 .Select(x =>
                     new
                     {
@@ -75,28 +75,42 @@ namespace AppConfgDocumentation.Controllers
                                 RoleId = r.RoleId,
                                 Role = r.Role
                             }).ToList()
-                        }
-
-                        ).ToList(),
-                        DitaTopics = x.DitaTopics.Select(c => new
+                        }).ToList(),
+                        DitaTopics = x.DocFamily.DitaTopics.Select(dt => new
                         {
-                            c.Id,
-                            c.Title,
-                            c.DocumentId,
-                            // Type = c is Concept ? 0 : c is Tasks ? 1 : -1,
-                            DitatopicVersions = c.DitatopicVersions.Select(v => new
+                            dt.Id,
+                            dt.Title,
+                            dt.DocFamilyId,
+                            dt.IsRequired,
+                            Chosen = false,
+                            DitatopicVersions = dt.DitatopicVersions.Select(dv => new
                             {
-                                v.Id,
-                                v.VersionNumber,
-                                v.CreatedAt,
-                                Type = v is ConceptVersion ? 0 : v is TaskVersion ? 1 : -1,
-                                v.ShortDescription,
-                                Roles = v.Roles.Select(r => r.RoleId).ToList(),
-                                v.DitaTopicId,
-                                Body = v is ConceptVersion ? (v as ConceptVersion).Body : v is ReferenceVersion ? (v as ReferenceVersion).Body : null,
-                                Steps = v is TaskVersion ? (v as TaskVersion).Steps : null
-                            }).ToList()
-                        }).ToList()
+                                dv.Id,
+                                dv.ShortDescription,
+                                dv.FileName,
+                                dv.VersionNumber,
+                                dv.CreatedAt,
+                                dv.DitaTopicId,
+                                Type = dv is ConceptVersion ? 0 : dv is TaskVersion ? 1 : -1,
+                                Body = dv is ConceptVersion ? ((ConceptVersion)dv).Body : null,
+                                Roles = dv.Roles.Select(x =>
+                                            x.RoleId
+                                        ).ToList(),
+                                steps = dv is TaskVersion ? ((TaskVersion)dv).Steps.Select(s => new
+                                {
+                                    s.Id,
+                                    s.Order,
+                                    s.Command,
+                                    s.TaskVersionId,
+                                }) : null
+                            }),
+                            Roles = dt.DitatopicVersions.SelectMany(x => x.Roles).Select(x => new
+                            {
+                                x.RoleId,
+                                x.Role.Name,
+                            }).ToList(),
+                        }).ToList(),
+                        x.DocFamily
                     }
                 )
                 .FirstOrDefaultAsync(x => x.Id == id);
@@ -109,18 +123,20 @@ namespace AppConfgDocumentation.Controllers
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
 
-            var newDoc = new Documento { AuthorId = document.AuthorId, Title = document.Title };
+            var newDoc = new Documento { AuthorId = document.AuthorId, Title = document.Title, DocFamilyId = document.DocFamilyId };
+            var family = await _dbContext.DocFamilies.FirstOrDefaultAsync(x => x.Id == document.DocFamilyId);
+            if (family == null) return NotFound(new { message = "Document Family not found" });
             using var transaction = await _dbContext.Database.BeginTransactionAsync();
             try
             {
                 await _dbContext.Documentos.AddAsync(newDoc);
                 await _dbContext.SaveChangesAsync();
-                newDoc.FolderName = _ditaFileCreationService.ReplaceInvalidChars($"{document.Title}_id{newDoc.Id}");
+                newDoc.FolderName = _ditaFileCreationService.ReplaceInvalidChars($"{newDoc.Title}_id{newDoc.Id}");
                 var newVersion = new DocVersion { VersionNumber = document.VersionNumber, DocumentId = newDoc.Id };
                 await _dbContext.DocVersions.AddAsync(newVersion);
                 await _dbContext.SaveChangesAsync();
                 var result = await addDocVersionsRoles(newVersion.Id);
-                if (result > 0) _ditaFileCreationService.CreateFolderForDocument(newDoc.FolderName);
+                if (result > 0) _ditaFileCreationService.CreateFolderForDocument(Path.Combine(family.FolderName, newDoc.FolderName));
                 await transaction.CommitAsync();
 
                 return Ok(new { message = "Document is created successfully.", data = newDoc });
@@ -137,16 +153,14 @@ namespace AppConfgDocumentation.Controllers
         {
             try
             {
-                Documento? doc = await _dbContext.Documentos.Include(f => f.Author).Include(x => x.DocVersions)
+                Documento? doc = await _dbContext.Documentos.Include(v => v.DocFamily).Include(f => f.Author).Include(x => x.DocVersions)
                 .ThenInclude(c => c.Roles)
                 .ThenInclude(c => c.Role)
-                .Include(x => x.DitaTopics)
-                .ThenInclude(c => c.DitatopicVersions)
-                .ThenInclude(c => c.Roles).FirstOrDefaultAsync(x => x.Id == id);
+                .FirstOrDefaultAsync(x => x.Id == id);
                 if (doc == null) return NotFound(new { message = "Document not found" });
 
                 doc.Title = documentViewModel.Title;
-                doc.FolderName = _ditaFileCreationService.RenameFolder(oldFileName: doc.FolderName, newFolderName: $"{documentViewModel.Title}_id{doc.Id}");
+                doc.FolderName = _ditaFileCreationService.RenameFolder(oldFolderName: Path.Combine(doc.DocFamily.FolderName, doc.FolderName), newFolderName: Path.Combine(doc.DocFamily.FolderName, $"{documentViewModel.Title}_id{doc.Id}"));
 
                 await _dbContext.SaveChangesAsync();
                 return Ok(new { message = "Document is updated successfully.", data = doc });
@@ -320,7 +334,8 @@ namespace AppConfgDocumentation.Controllers
         {
             try
             {
-                Documento? doc = await _dbContext.Documentos.Include(x => x.DitaTopics)
+                Documento? doc = await _dbContext.Documentos.Include(x => x.DocFamily)
+                .ThenInclude(x => x.DitaTopics)
                 .ThenInclude(x => x.DitatopicVersions).ThenInclude(x => x.Roles)
                 .Include(x => x.DocVersions).ThenInclude(x => x.DitatopicVersions)
                 .Include(x => x.DocVersions).ThenInclude(b => b.Roles).ThenInclude(r => r.Role).FirstOrDefaultAsync(x => x.Id == id);
@@ -387,7 +402,7 @@ namespace AppConfgDocumentation.Controllers
 
         private string generateDitaMapXml(List<DitatopicVersion> ditatopicVersions, Documento document, DocVersion docVersion)
         {
-            var topicRefs = ditatopicVersions.Select(x => $"<topicref href='{_ditaFileCreationService.ReplaceInvalidChars(x.FileName)}.dita' />");
+            var topicRefs = ditatopicVersions.Select(x => $"<topicref href='../{_ditaFileCreationService.ReplaceInvalidChars(x.FileName)}.dita' />");
 
             var ditaMapXml = $@"<?xml version='1.0' encoding='UTF-8'?>
                 <!DOCTYPE map PUBLIC '-//OASIS//DTD DITA Map//EN' '{_hostingEnvironment.WebRootPath.Replace("\\", "/")}/dtd/map.dtd'>
@@ -404,9 +419,9 @@ namespace AppConfgDocumentation.Controllers
             {
                 foreach (var role in docVersion.Roles)
                 {
-                    var ditatopicversionsByRole = doc.DitaTopics.SelectMany(x => x.DitatopicVersions).Where(x => x.Roles.Any(r => r.RoleId == role.RoleId)).ToList();
+                    var ditatopicversionsByRole = doc.DocFamily.DitaTopics.SelectMany(x => x.DitatopicVersions).Where(x => x.Roles.Any(r => r.RoleId == role.RoleId)).ToList();
                     role.DitaMapXml = generateDitaMapXml(ditatopicversionsByRole, doc, docVersion);
-                    role.DitaMapFilePath = _ditaFileCreationService.SaveDitaFile(role.DitaMapXml, doc.FolderName, docVersion.VersionNumber,
+                    role.DitaMapFilePath = _ditaFileCreationService.SaveDitaFile(role.DitaMapXml, Path.Combine(doc.DocFamily.FolderName, doc.FolderName), docVersion.VersionNumber,
                     DitaFileExtensions.ditamap, role.Role.Name);
                     res = await GeneratePDF(request: new GeneratePDFModelView(docV: docVersion, docVersionRole: role));
                 }
@@ -437,7 +452,7 @@ namespace AppConfgDocumentation.Controllers
             var res = new ReturnTypeOfDitaToics();
             try
             {
-                var outputPdfPath = Path.Combine(_hostingEnvironment.WebRootPath, request.docV.Document.FolderName
+                var outputPdfPath = Path.Combine(_hostingEnvironment.WebRootPath, request.docV.Document.DocFamily.FolderName, request.docV.Document.FolderName
                 , $"{request.docV.VersionNumber}");
                 var finalOutputPdfPath = $"{outputPdfPath}\\{request.docV.VersionNumber}{request.docVersionRole.Role.Name}.pdf";
                 var relativePath = Path.GetRelativePath(_hostingEnvironment.WebRootPath, finalOutputPdfPath);

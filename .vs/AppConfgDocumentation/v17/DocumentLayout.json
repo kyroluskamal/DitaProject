@@ -3,8 +3,16 @@
   "WorkspaceRootPath": "D:\\IDDprojecct\\AppConfgDocumentation\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EA3DAF86-628B-476D-AB56-B36269C778E8}|AppConfgDocumentation.csproj|d:\\iddprojecct\\appconfgdocumentation\\class diagram.cd||{59B0B277-7DDF-4E36-A3ED-02DAC5B9E2FA}|",
-      "RelativeMoniker": "D:0:0:{EA3DAF86-628B-476D-AB56-B36269C778E8}|AppConfgDocumentation.csproj|solutionrelative:class diagram.cd||{59B0B277-7DDF-4E36-A3ED-02DAC5B9E2FA}|"
+      "AbsoluteMoniker": "D:0:0:{EA3DAF86-628B-476D-AB56-B36269C778E8}|AppConfgDocumentation.csproj|d:\\iddprojecct\\appconfgdocumentation\\models\\documento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA3DAF86-628B-476D-AB56-B36269C778E8}|AppConfgDocumentation.csproj|solutionrelative:models\\documento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA3DAF86-628B-476D-AB56-B36269C778E8}|AppConfgDocumentation.csproj|d:\\iddprojecct\\appconfgdocumentation\\class design.cd||{59B0B277-7DDF-4E36-A3ED-02DAC5B9E2FA}|",
+      "RelativeMoniker": "D:0:0:{EA3DAF86-628B-476D-AB56-B36269C778E8}|AppConfgDocumentation.csproj|solutionrelative:class design.cd||{59B0B277-7DDF-4E36-A3ED-02DAC5B9E2FA}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA3DAF86-628B-476D-AB56-B36269C778E8}|AppConfgDocumentation.csproj|d:\\iddprojecct\\appconfgdocumentation\\models\\docfamily.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA3DAF86-628B-476D-AB56-B36269C778E8}|AppConfgDocumentation.csproj|solutionrelative:models\\docfamily.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EA3DAF86-628B-476D-AB56-B36269C778E8}|AppConfgDocumentation.csproj|d:\\iddprojecct\\appconfgdocumentation\\models\\ditatopic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -34,84 +42,102 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "class diagram.cd",
-              "DocumentMoniker": "D:\\IDDprojecct\\AppConfgDocumentation\\class diagram.cd",
-              "RelativeDocumentMoniker": "class diagram.cd",
-              "ToolTip": "D:\\IDDprojecct\\AppConfgDocumentation\\class diagram.cd",
-              "RelativeToolTip": "class diagram.cd",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000463|",
-              "WhenOpened": "2024-04-16T15:56:42.579Z",
+              "DocumentIndex": 2,
+              "Title": "DocFamily.cs",
+              "DocumentMoniker": "D:\\IDDprojecct\\AppConfgDocumentation\\Models\\DocFamily.cs",
+              "RelativeDocumentMoniker": "Models\\DocFamily.cs",
+              "ToolTip": "D:\\IDDprojecct\\AppConfgDocumentation\\Models\\DocFamily.cs",
+              "RelativeToolTip": "Models\\DocFamily.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-18T09:54:00.751Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "DitaTopic.cs",
-              "DocumentMoniker": "D:\\IDDprojecct\\AppConfgDocumentation\\Models\\DitaTopic.cs",
-              "RelativeDocumentMoniker": "Models\\DitaTopic.cs",
-              "ToolTip": "D:\\IDDprojecct\\AppConfgDocumentation\\Models\\DitaTopic.cs",
-              "RelativeToolTip": "Models\\DitaTopic.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAYAAAAEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-02T21:43:08.621Z",
+              "Title": "class design.cd",
+              "DocumentMoniker": "D:\\IDDprojecct\\AppConfgDocumentation\\class design.cd",
+              "RelativeDocumentMoniker": "class design.cd",
+              "ToolTip": "D:\\IDDprojecct\\AppConfgDocumentation\\class design.cd",
+              "RelativeToolTip": "class design.cd",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000463|",
+              "WhenOpened": "2024-05-18T09:50:54.299Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DocumentsController.cs",
-              "DocumentMoniker": "D:\\IDDprojecct\\AppConfgDocumentation\\Controllers\\DocumentsController.cs",
-              "RelativeDocumentMoniker": "Controllers\\DocumentsController.cs",
-              "ToolTip": "D:\\IDDprojecct\\AppConfgDocumentation\\Controllers\\DocumentsController.cs",
-              "RelativeToolTip": "Controllers\\DocumentsController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAD8AAAA2AAAA",
+              "DocumentIndex": 0,
+              "Title": "Documento.cs",
+              "DocumentMoniker": "D:\\IDDprojecct\\AppConfgDocumentation\\Models\\Documento.cs",
+              "RelativeDocumentMoniker": "Models\\Documento.cs",
+              "ToolTip": "D:\\IDDprojecct\\AppConfgDocumentation\\Models\\Documento.cs",
+              "RelativeToolTip": "Models\\Documento.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-02T18:23:42.84Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "DitaFileCreationService.cs",
-              "DocumentMoniker": "D:\\IDDprojecct\\AppConfgDocumentation\\Services\\DitaFileCreationService.cs",
-              "RelativeDocumentMoniker": "Services\\DitaFileCreationService.cs",
-              "ToolTip": "D:\\IDDprojecct\\AppConfgDocumentation\\Services\\DitaFileCreationService.cs",
-              "RelativeToolTip": "Services\\DitaFileCreationService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAyAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-02T21:50:20.96Z",
+              "WhenOpened": "2024-05-18T09:47:48.615Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "DitaTopic.cs",
+              "DocumentMoniker": "D:\\IDDprojecct\\AppConfgDocumentation\\Models\\DitaTopic.cs",
+              "RelativeDocumentMoniker": "Models\\DitaTopic.cs",
+              "ToolTip": "D:\\IDDprojecct\\AppConfgDocumentation\\Models\\DitaTopic.cs",
+              "RelativeToolTip": "Models\\DitaTopic.cs",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAuwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-18T09:47:34.481Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DocumentsController.cs",
+              "DocumentMoniker": "D:\\IDDprojecct\\AppConfgDocumentation\\Controllers\\DocumentsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\DocumentsController.cs",
+              "ToolTip": "D:\\IDDprojecct\\AppConfgDocumentation\\Controllers\\DocumentsController.cs",
+              "RelativeToolTip": "Controllers\\DocumentsController.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-02T18:23:42.84Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "DitaFileCreationService.cs",
+              "DocumentMoniker": "D:\\IDDprojecct\\AppConfgDocumentation\\Services\\DitaFileCreationService.cs",
+              "RelativeDocumentMoniker": "Services\\DitaFileCreationService.cs",
+              "ToolTip": "D:\\IDDprojecct\\AppConfgDocumentation\\Services\\DitaFileCreationService.cs",
+              "RelativeToolTip": "Services\\DitaFileCreationService.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-02T21:50:20.96Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "DitaValidationService.cs",
               "DocumentMoniker": "D:\\IDDprojecct\\AppConfgDocumentation\\Services\\DitaValidationService.cs",
               "RelativeDocumentMoniker": "Services\\DitaValidationService.cs",
               "ToolTip": "D:\\IDDprojecct\\AppConfgDocumentation\\Services\\DitaValidationService.cs",
               "RelativeToolTip": "Services\\DitaValidationService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-02T21:50:59.478Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-02T21:50:59.478Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\IDDprojecct\\AppConfgDocumentation\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "D:\\IDDprojecct\\AppConfgDocumentation\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-02T21:51:32.541Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-02T21:51:32.541Z"
             }
           ]
         }

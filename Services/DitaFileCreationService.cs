@@ -11,7 +11,7 @@ namespace AppConfgDocumentation.Services
         public string SaveDitaFile(string xmlContent, string outputPath, string filename, DitaFileExtensions fileExtension = DitaFileExtensions.dita, string roleName = "");
         public string ReplaceInvalidChars(string title);
         public void CreateFolderForDocument(string title);
-        public string RenameFolder(string oldFileName, string newFolderName);
+        public string RenameFolder(string oldFolderName, string newFolderName);
         public void DeleteDocumentFolder(string folderPath);
     }
 
@@ -58,10 +58,10 @@ namespace AppConfgDocumentation.Services
                 Directory.CreateDirectory(folderPath);
             }
         }
-        public string RenameFolder(string oldFileName, string newFolderName)
+        public string RenameFolder(string oldFolderName, string newFolderName)
         {
             var folderName = ReplaceInvalidChars(newFolderName);
-            string existingFolderPath = Path.Combine(_hostingEnvironment.WebRootPath, oldFileName);
+            string existingFolderPath = Path.Combine(_hostingEnvironment.WebRootPath, oldFolderName);
             string newFolderPath = Path.Combine(_hostingEnvironment.WebRootPath, folderName);
             if (Directory.Exists(existingFolderPath))
             {

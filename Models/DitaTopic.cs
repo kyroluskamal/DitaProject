@@ -8,10 +8,11 @@ namespace AppConfgDocumentation.Models
     {
         [Required]
         public string Title { get; set; } = string.Empty;
+        public bool IsRequired { get; set; } = false;
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
-        [ForeignKey(nameof(Document))]
-        public int DocumentId { get; set; }
-        public virtual Documento? Document { get; set; }
+        [ForeignKey(nameof(DocFamilyId))]
+        public int DocFamilyId { get; set; }
+        public virtual DocFamily? DocFamily { get; set; }
         public virtual ICollection<DitatopicVersion> DitatopicVersions { get; set; } = [];
 
     }
