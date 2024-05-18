@@ -1,86 +1,215 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="AppConfgDocumentation.Models.CommonModel" Collapsed="true">
-    <Position X="8" Y="1" Width="1.5" />
+  <Class Name="AppConfgDocumentation.Models.CommonModel">
+    <Position X="8" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\CommonModels.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AppConfgDocumentation.Models.DitaTopic">
-    <Position X="4.5" Y="2.75" Width="2" />
+    <Position X="4.75" Y="3.25" Width="1.5" />
+    <AssociationLine Name="DitatopicVersions" Type="AppConfgDocumentation.Models.DitatopicVersion" ManuallyRouted="true">
+      <Path>
+        <Point X="6.25" Y="4.155" />
+        <Point X="6.667" Y="4.155" Type="JumpStart" />
+        <Point X="6.833" Y="4.155" Type="JumpEnd" />
+        <Point X="7.625" Y="4.155" />
+        <Point X="7.625" Y="3.979" />
+        <Point X="9" Y="3.979" />
+      </Path>
+    </AssociationLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAEAAAAAEAAAiAAAAAgAAAAAAAAAIAAAAAAAAA=</HashCode>
       <FileName>Models\DitaTopic.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="DitatopicVersions" />
       <Property Name="DocFamily" />
     </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="DitatopicVersions" />
+    </ShowAsCollectionAssociation>
   </Class>
-  <Class Name="AppConfgDocumentation.Models.DitatopicVersion" Collapsed="true">
-    <Position X="10.75" Y="2.75" Width="1.5" />
+  <Class Name="AppConfgDocumentation.Models.DitatopicVersion">
+    <Position X="9" Y="3.25" Width="1.5" />
+    <InheritanceLine Type="AppConfgDocumentation.Models.CommonModel" ManuallyRouted="true">
+      <Path>
+        <Point X="8.75" Y="1.853" />
+        <Point X="8.75" Y="2.371" />
+        <Point X="9.75" Y="2.371" />
+        <Point X="9.75" Y="3.25" />
+      </Path>
+    </InheritanceLine>
+    <AssociationLine Name="Roles" Type="AppConfgDocumentation.Models.DitaTopicVersionsRoles" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.188" Y="5.637" />
+        <Point X="10.188" Y="8.562" />
+        <Point X="11" Y="8.562" />
+      </Path>
+    </AssociationLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAgAAEAAACAAAQAgAgAgAAAAAABAAABAAEA=</HashCode>
       <FileName>Models\DitaTopic.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="DitaTopic" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="DocVersions" />
+      <Property Name="Roles" />
+    </ShowAsCollectionAssociation>
   </Class>
-  <Class Name="AppConfgDocumentation.Models.ConceptVersion" Collapsed="true">
-    <Position X="13.25" Y="4.25" Width="1.5" />
+  <Class Name="AppConfgDocumentation.Models.ConceptVersion">
+    <Position X="12" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\DitaTopic.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="AppConfgDocumentation.Models.TaskVersion" Collapsed="true">
-    <Position X="8.75" Y="4.25" Width="1.5" />
+  <Class Name="AppConfgDocumentation.Models.TaskVersion">
+    <Position X="11" Y="5.75" Width="1.5" />
+    <InheritanceLine Type="AppConfgDocumentation.Models.DitatopicVersion" FixedFromPoint="true">
+      <Path>
+        <Point X="10.5" Y="5.213" />
+        <Point X="11.5" Y="5.213" />
+        <Point X="11.5" Y="5.75" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\DitaTopic.cs</FileName>
     </TypeIdentifier>
-  </Class>
-  <Class Name="AppConfgDocumentation.Models.ReferenceVersion" Collapsed="true">
-    <Position X="10.75" Y="4.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Models\DitaTopic.cs</FileName>
-    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Steps" />
+    </ShowAsCollectionAssociation>
   </Class>
   <Class Name="AppConfgDocumentation.Models.Step">
-    <Position X="6.5" Y="5" Width="1.5" />
+    <Position X="13.25" Y="6.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAEAAAAAAAAAAAAAAEAABAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
       <FileName>Models\DitaTopic.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="TaskVersion" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="AppConfgDocumentation.Models.DitaTopicVersionsRoles">
-    <Position X="14.25" Y="2" Width="2.25" />
+    <Position X="11" Y="8" Width="2" />
+    <AssociationLine Name="DitatopicVersion" Type="AppConfgDocumentation.Models.DitatopicVersion" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="11.625" Y="8" />
+        <Point X="11.625" Y="7.625" />
+        <Point X="10.406" Y="7.625" />
+        <Point X="10.406" Y="5.637" />
+      </Path>
+    </AssociationLine>
     <TypeIdentifier>
       <HashCode>AAAAAAIAAAAAAAAAEAAAAAAAAAAAABAAAAAAAAIAAAA=</HashCode>
       <FileName>Models\DitaTopic.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="DitatopicVersion" />
-      <Property Name="Role" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="Microsoft.AspNetCore.Identity.IdentityRole&lt;TKey&gt;" Collapsed="true">
-    <Position X="19.5" Y="2.5" Width="1.5" />
-    <TypeIdentifier />
-  </Class>
   <Class Name="AppConfgDocumentation.Models.DocFamily">
-    <Position X="1.5" Y="3.5" Width="1.5" />
+    <Position X="1.25" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAEAAAAABAEgAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\DocFamily.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Documentos" />
       <Property Name="DitaTopics" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="AppConfgDocumentation.Models.Documento">
+    <Position X="3.25" Y="6" Width="1.5" />
+    <AssociationLine Name="DocFamily" Type="AppConfgDocumentation.Models.DocFamily" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="3.25" Y="6.438" />
+        <Point X="2.312" Y="6.438" />
+        <Point X="2.312" Y="4.867" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEBAAAAEAAgAAAAAAgAAAAAAAAAJAAAAAAAAA=</HashCode>
+      <FileName>Models\Documento.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Author" />
+      <Property Name="DocFamily" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="DocVersions" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="AppConfgDocumentation.Models.ApplicationUser">
+    <Position X="3" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Models\ApplicationUser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AppConfgDocumentation.Models.DocVersion">
+    <Position X="6" Y="5.75" Width="1.5" />
+    <AssociationLine Name="DitatopicVersions" Type="AppConfgDocumentation.Models.DocVersionDitatopicVersion" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="7.5" Y="6.938" />
+        <Point X="8.031" Y="6.938" />
+        <Point X="8.031" Y="9.25" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Roles" Type="AppConfgDocumentation.Models.DocVersionsRoles" FixedToPoint="true">
+      <Path>
+        <Point X="6.5" Y="7.367" />
+        <Point X="6.5" Y="8.5" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAEAAAgAAAAAAEAAAiAAAAAAAgAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Documento.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Document" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="DitaTopics" />
+      <Property Name="DitatopicVersions" />
+      <Property Name="Roles" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="AppConfgDocumentation.Models.DocVersionDitatopicVersion">
+    <Position X="7.75" Y="9.25" Width="2.25" />
+    <AssociationLine Name="DitatopicVersion" Type="AppConfgDocumentation.Models.DitatopicVersion">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.531" Y="1.529" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="DocVersion" Type="AppConfgDocumentation.Models.DocVersion" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="8.2" Y="9.25" />
+        <Point X="8.2" Y="6.411" />
+        <Point X="7.5" Y="6.411" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAATAAAAAAAAIAAAA=</HashCode>
+      <FileName>Models\DocVersionDitatopicVersion.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="DitatopicVersion" />
+      <Property Name="DocVersion" />
     </ShowAsAssociation>
   </Class>
-  <Interface Name="System.Collections.Generic.ICollection&lt;T&gt;" Collapsed="true">
-    <Position X="4.5" Y="7.25" Width="2.75" />
-    <TypeIdentifier />
-  </Interface>
+  <Class Name="AppConfgDocumentation.Models.DocVersionsRoles">
+    <Position X="6" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAIAAAAACAAAEAAAAAAAAAAAASAAgAAAAAAAAAA=</HashCode>
+      <FileName>Models\Documento.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="DocVersion" />
+    </ShowAsAssociation>
+  </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
