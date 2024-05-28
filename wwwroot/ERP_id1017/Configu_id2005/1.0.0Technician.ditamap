@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+                <!DOCTYPE map PUBLIC '-//OASIS//DTD DITA Map//EN' 'D:/IDDprojecct/AppConfgDocumentation/wwwroot/dtd/map.dtd'>
+                <map>
+                    <title>Configu - V1.0.0</title>
+                    <topicref href='../Des_T_id_1017_V_id_2020_v_no_1.dita' /><topicref href='../Conf_T_id_1018_V_id_2022_v_no_1.dita' /><topicref href='../How_to_use_T_id_1019_V_id_2023_v_no_1.dita' />
+                </map>

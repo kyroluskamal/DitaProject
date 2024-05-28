@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+                <!DOCTYPE concept PUBLIC '-//OASIS//DTD DITA Concept//EN' '../dtd/concept.dtd'>
+                <concept id='Description_T_id_13_V_id_1015_v_no_docv1.0.0'>
+                    <title>Description</title>
+                    <shortdesc>Simple description</shortdesc>
+                    <conbody>
+                        <p class="MsoNormal">The specification of database targets is core to Sqitch database change management. A target consists of a database connection URI, a plan file, change script directories, a registry schema or database name, and the path to a database engine command-line client. Sqitch determines the values for these attributes via a hierarchical evaluation of the runtime configuration, examining and selecting from these values:</p>
+<ol>
+<li>Command-line options</li>
+<li>Target-specific configuration</li>
+<li>Engine-specific configuration</li>
+<li>Core configuration</li>
+<li>A reasonable default</li>
+</ol>
+<p>This document explains how this evaluation works, and how to use the init, config, engine, and target commands to configure these values for various deployment scenarios</p>
+                    </conbody>
+                </concept>
+            

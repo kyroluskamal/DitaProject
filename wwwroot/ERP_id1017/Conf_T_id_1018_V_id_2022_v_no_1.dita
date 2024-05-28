@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='UTF-8'?>
                 <!DOCTYPE task PUBLIC '-//OASIS//DTD DITA Task//EN' '../dtd/task.dtd'>
-                <task id='fsdfs_T_id_4_V_id_1005_v_no_fs'>
-                    <title>fsdfs</title>
-                    <shortdesc>fs</shortdesc>
+                <task id='Conf_T_id_1018_V_id_2022_v_no_1'>
+                    <title>Conf</title>
+                    
                     <taskbody>
                         <steps><step>
-                    <cmd>fsfsfsf</cmd>
+                    <cmd>Open terminal</cmd>
                 </step><step>
-                    <cmd>fdsfsfdsdfs</cmd>
+                    <cmd>execute command</cmd>
                 </step></steps>
                     </taskbody>
                 </task>

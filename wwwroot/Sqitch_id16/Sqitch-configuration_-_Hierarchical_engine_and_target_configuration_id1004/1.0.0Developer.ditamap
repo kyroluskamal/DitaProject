@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+                <!DOCTYPE map PUBLIC '-//OASIS//DTD DITA Map//EN' 'D:/IDDprojecct/AppConfgDocumentation/wwwroot/dtd/map.dtd'>
+                <map>
+                    <title>Sqitch-configuration - Hierarchical engine and target configuration - V1.0.0</title>
+                    <topicref href='../Description_T_id_13_V_id_1015_v_no_docv1.0.0.dita' /><topicref href='../Project_Initialization_T_id_14_V_id_1016_v_no_docv1.0.0.dita' /><topicref href='../Global_Configuration_T_id_15_V_id_1018_v_no_docV1.0.0.dita' /><topicref href='../Engine_Configuration_T_id_16_V_id_1019_v_no_docV1.0.0.dita' />
+                </map>

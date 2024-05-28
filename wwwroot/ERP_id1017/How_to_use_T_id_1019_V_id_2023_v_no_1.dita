@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='UTF-8'?>
                 <!DOCTYPE task PUBLIC '-//OASIS//DTD DITA Task//EN' '../dtd/task.dtd'>
-                <task id='jljlkjlkjlkjkljkljkl_T_id_6_V_id_1006_v_no_fsfs'>
-                    <title>jljlkjlkjlkjkljkljkl</title>
-                    <shortdesc>fsdfs</shortdesc>
+                <task id='How_to_use_T_id_1019_V_id_2023_v_no_1'>
+                    <title>How to use</title>
+                    
                     <taskbody>
                         <steps><step>
-                    <cmd>fsfsfsfsdf</cmd>
+                    <cmd>Open cmd</cmd>
                 </step><step>
-                    <cmd>hhhhhhhhhhhh</cmd>
+                    <cmd>execute npm i</cmd>
                 </step></steps>
                     </taskbody>
                 </task>

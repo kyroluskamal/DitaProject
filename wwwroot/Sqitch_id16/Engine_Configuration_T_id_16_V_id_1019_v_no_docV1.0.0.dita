@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+                <!DOCTYPE task PUBLIC '-//OASIS//DTD DITA Task//EN' '../dtd/task.dtd'>
+                <task id='Engine_Configuration_T_id_16_V_id_1019_v_no_docV1.0.0'>
+                    <title>Engine Configuration</title>
+                    
+                    <taskbody>
+                        <steps><step>
+                    <cmd>Create a subdirectory (e.g., pg) and move PostgreSQL-related files there. Create a subdirectory (e.g., pg) and move PostgreSQL-related files there.</cmd>
+                </step><step>
+                    <cmd>Open your terminal.</cmd>
+                </step><step>
+                    <cmd>Add the PostgreSQL engine to the configuration: sqitch engine add pg --client /usr/local/pgsql/bin/psql</cmd>
+                </step><step>
+                    <cmd>Set the top directory for the PostgreSQL engine: This command configures Sqitch to use the newly-created pg directory for PostgreSQL-related scripts.</cmd>
+                </step><step>
+                    <cmd>To verify and view all the settings for the PostgreSQL engine, run: sqitch engine show pg</cmd>
+                </step><step>
+                    <cmd>The show action displays the fully-evaluated configuration, showing the top directory and client settings.</cmd>
+                </step><step>
+                    <cmd>To add SQLite support, run the command: sqitch engine add sqlite --client /path/to/sqlite3</cmd>
+                </step></steps>
+                    </taskbody>
+                </task>
+            

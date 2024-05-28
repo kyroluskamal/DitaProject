@@ -576,12 +576,12 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\dtd\xnalDomain.mod))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\My_first_familygdfgdgd_id13\Description_T_id_2_V_id_7_v_no_vvc.dita))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Sqitch_id16\Description_T_id_13_V_id_1015_v_no_docv1.0.0.dita))">
       <SourceType>Package</SourceType>
       <SourceId>AppConfgDocumentation</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/AppConfgDocumentation</BasePath>
-      <RelativePath>My_first_familygdfgdgd_id13/Description_T_id_2_V_id_7_v_no_vvc.dita</RelativePath>
+      <RelativePath>Sqitch_id16/Description_T_id_13_V_id_1015_v_no_docv1.0.0.dita</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -590,14 +590,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\My_first_familygdfgdgd_id13\Description_T_id_2_V_id_7_v_no_vvc.dita))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Sqitch_id16\Description_T_id_13_V_id_1015_v_no_docv1.0.0.dita))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\My_first_familygdfgdgd_id13\fsdfs_T_id_4_V_id_1005_v_no_fs.dita))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Sqitch_id16\Engine_Configuration_T_id_16_V_id_1019_v_no_docV1.0.0.dita))">
       <SourceType>Package</SourceType>
       <SourceId>AppConfgDocumentation</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/AppConfgDocumentation</BasePath>
-      <RelativePath>My_first_familygdfgdgd_id13/fsdfs_T_id_4_V_id_1005_v_no_fs.dita</RelativePath>
+      <RelativePath>Sqitch_id16/Engine_Configuration_T_id_16_V_id_1019_v_no_docV1.0.0.dita</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -606,14 +606,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\My_first_familygdfgdgd_id13\fsdfs_T_id_4_V_id_1005_v_no_fs.dita))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Sqitch_id16\Engine_Configuration_T_id_16_V_id_1019_v_no_docV1.0.0.dita))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\My_first_familygdfgdgd_id13\jljlkjlkjlkjkljkljkl_T_id_6_V_id_1006_v_no_fsfs.dita))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Sqitch_id16\Global_Configuration_T_id_15_V_id_1018_v_no_docV1.0.0.dita))">
       <SourceType>Package</SourceType>
       <SourceId>AppConfgDocumentation</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/AppConfgDocumentation</BasePath>
-      <RelativePath>My_first_familygdfgdgd_id13/jljlkjlkjlkjkljkljkl_T_id_6_V_id_1006_v_no_fsfs.dita</RelativePath>
+      <RelativePath>Sqitch_id16/Global_Configuration_T_id_15_V_id_1018_v_no_docV1.0.0.dita</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -622,14 +622,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\My_first_familygdfgdgd_id13\jljlkjlkjlkjkljkljkl_T_id_6_V_id_1006_v_no_fsfs.dita))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Sqitch_id16\Global_Configuration_T_id_15_V_id_1018_v_no_docV1.0.0.dita))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\My_first_familygdfgdgd_id13\My_first_doc_id2\1.0\1.0Analyst.pdf))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Sqitch_id16\Project_Initialization_T_id_14_V_id_1016_v_no_docv1.0.0.dita))">
       <SourceType>Package</SourceType>
       <SourceId>AppConfgDocumentation</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/AppConfgDocumentation</BasePath>
-      <RelativePath>My_first_familygdfgdgd_id13/My_first_doc_id2/1.0/1.0Analyst.pdf</RelativePath>
+      <RelativePath>Sqitch_id16/Project_Initialization_T_id_14_V_id_1016_v_no_docv1.0.0.dita</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -638,14 +638,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\My_first_familygdfgdgd_id13\My_first_doc_id2\1.0\1.0Analyst.pdf))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Sqitch_id16\Project_Initialization_T_id_14_V_id_1016_v_no_docv1.0.0.dita))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\My_first_familygdfgdgd_id13\My_first_doc_id2\1.0\1.0Developer.pdf))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Sqitch_id16\Project_Initialization_T_id_14_V_id_1017_v_no_docv1.0.0Tech.dita))">
       <SourceType>Package</SourceType>
       <SourceId>AppConfgDocumentation</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/AppConfgDocumentation</BasePath>
-      <RelativePath>My_first_familygdfgdgd_id13/My_first_doc_id2/1.0/1.0Developer.pdf</RelativePath>
+      <RelativePath>Sqitch_id16/Project_Initialization_T_id_14_V_id_1017_v_no_docv1.0.0Tech.dita</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -654,14 +654,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\My_first_familygdfgdgd_id13\My_first_doc_id2\1.0\1.0Developer.pdf))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Sqitch_id16\Project_Initialization_T_id_14_V_id_1017_v_no_docv1.0.0Tech.dita))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\My_first_familygdfgdgd_id13\My_first_doc_id2\1.0\1.0Technician.pdf))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Sqitch_id16\Sqitch-configuration_-_Hierarchical_engine_and_target_configuration_id1004\1.0.0\1.0.0Analyst.pdf))">
       <SourceType>Package</SourceType>
       <SourceId>AppConfgDocumentation</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/AppConfgDocumentation</BasePath>
-      <RelativePath>My_first_familygdfgdgd_id13/My_first_doc_id2/1.0/1.0Technician.pdf</RelativePath>
+      <RelativePath>Sqitch_id16/Sqitch-configuration_-_Hierarchical_engine_and_target_configuration_id1004/1.0.0/1.0.0Analyst.pdf</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -670,14 +670,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\My_first_familygdfgdgd_id13\My_first_doc_id2\1.0\1.0Technician.pdf))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Sqitch_id16\Sqitch-configuration_-_Hierarchical_engine_and_target_configuration_id1004\1.0.0\1.0.0Analyst.pdf))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\My_first_familygdfgdgd_id13\My_first_doc_id2\1.0Analyst.ditamap))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Sqitch_id16\Sqitch-configuration_-_Hierarchical_engine_and_target_configuration_id1004\1.0.0\1.0.0Developer.pdf))">
       <SourceType>Package</SourceType>
       <SourceId>AppConfgDocumentation</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/AppConfgDocumentation</BasePath>
-      <RelativePath>My_first_familygdfgdgd_id13/My_first_doc_id2/1.0Analyst.ditamap</RelativePath>
+      <RelativePath>Sqitch_id16/Sqitch-configuration_-_Hierarchical_engine_and_target_configuration_id1004/1.0.0/1.0.0Developer.pdf</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -686,14 +686,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\My_first_familygdfgdgd_id13\My_first_doc_id2\1.0Analyst.ditamap))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Sqitch_id16\Sqitch-configuration_-_Hierarchical_engine_and_target_configuration_id1004\1.0.0\1.0.0Developer.pdf))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\My_first_familygdfgdgd_id13\My_first_doc_id2\1.0Developer.ditamap))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Sqitch_id16\Sqitch-configuration_-_Hierarchical_engine_and_target_configuration_id1004\1.0.0\1.0.0Technician.pdf))">
       <SourceType>Package</SourceType>
       <SourceId>AppConfgDocumentation</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/AppConfgDocumentation</BasePath>
-      <RelativePath>My_first_familygdfgdgd_id13/My_first_doc_id2/1.0Developer.ditamap</RelativePath>
+      <RelativePath>Sqitch_id16/Sqitch-configuration_-_Hierarchical_engine_and_target_configuration_id1004/1.0.0/1.0.0Technician.pdf</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -702,14 +702,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\My_first_familygdfgdgd_id13\My_first_doc_id2\1.0Developer.ditamap))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Sqitch_id16\Sqitch-configuration_-_Hierarchical_engine_and_target_configuration_id1004\1.0.0\1.0.0Technician.pdf))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\My_first_familygdfgdgd_id13\My_first_doc_id2\1.0Technician.ditamap))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Sqitch_id16\Sqitch-configuration_-_Hierarchical_engine_and_target_configuration_id1004\1.0.0Analyst.ditamap))">
       <SourceType>Package</SourceType>
       <SourceId>AppConfgDocumentation</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/AppConfgDocumentation</BasePath>
-      <RelativePath>My_first_familygdfgdgd_id13/My_first_doc_id2/1.0Technician.ditamap</RelativePath>
+      <RelativePath>Sqitch_id16/Sqitch-configuration_-_Hierarchical_engine_and_target_configuration_id1004/1.0.0Analyst.ditamap</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -718,7 +718,39 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\My_first_familygdfgdgd_id13\My_first_doc_id2\1.0Technician.ditamap))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Sqitch_id16\Sqitch-configuration_-_Hierarchical_engine_and_target_configuration_id1004\1.0.0Analyst.ditamap))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Sqitch_id16\Sqitch-configuration_-_Hierarchical_engine_and_target_configuration_id1004\1.0.0Developer.ditamap))">
+      <SourceType>Package</SourceType>
+      <SourceId>AppConfgDocumentation</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/AppConfgDocumentation</BasePath>
+      <RelativePath>Sqitch_id16/Sqitch-configuration_-_Hierarchical_engine_and_target_configuration_id1004/1.0.0Developer.ditamap</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Sqitch_id16\Sqitch-configuration_-_Hierarchical_engine_and_target_configuration_id1004\1.0.0Developer.ditamap))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Sqitch_id16\Sqitch-configuration_-_Hierarchical_engine_and_target_configuration_id1004\1.0.0Technician.ditamap))">
+      <SourceType>Package</SourceType>
+      <SourceId>AppConfgDocumentation</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/AppConfgDocumentation</BasePath>
+      <RelativePath>Sqitch_id16/Sqitch-configuration_-_Hierarchical_engine_and_target_configuration_id1004/1.0.0Technician.ditamap</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Sqitch_id16\Sqitch-configuration_-_Hierarchical_engine_and_target_configuration_id1004\1.0.0Technician.ditamap))</OriginalItemSpec>
     </StaticWebAsset>
   </ItemGroup>
 </Project>

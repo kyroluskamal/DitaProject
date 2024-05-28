@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+                <!DOCTYPE concept PUBLIC '-//OASIS//DTD DITA Concept//EN' '../dtd/concept.dtd'>
+                <concept id='Project_Initialization_T_id_14_V_id_1016_v_no_docv1.0.0'>
+                    <title>Project Initialization</title>
+                    
+                    <conbody>
+                        <p>Typically, the first thing done with Sqitch is using the 'init' command to start a new project. The most important aspect is to configure the database engine right at the beginning to ensure proper setup. For example, starting a project called "widgets" to manage PostgreSQL databases.</p>
+                    </conbody>
+                </concept>
+            

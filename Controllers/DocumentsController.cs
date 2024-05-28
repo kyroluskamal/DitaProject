@@ -474,7 +474,6 @@ namespace AppConfgDocumentation.Controllers
                     CreateNoWindow = true
                 };
                 process.Start();
-                // To read the output (stdout)
                 string error = await process.StandardError.ReadToEndAsync();
                 process.WaitForExit();
                 if (!string.IsNullOrEmpty(error))
@@ -482,8 +481,7 @@ namespace AppConfgDocumentation.Controllers
                     res = new ReturnTypeOfDitaToics { Code = 0, Message = error };
                     return res;
                 }
-                outputPdfPath = $"{outputPdfPath}\\{request.docV.VersionNumber}.pdf";
-                // Further check if the PDF was generated successfully.
+                outputPdfPath = $"{outputPdfPath}\\{request.docV.VersionNumber}{request.docVersionRole.Role.Name}.pdf";
                 request.docVersionRole.PDFfilePath = relativePath;
                 if (!System.IO.File.Exists(outputPdfPath))
                 {

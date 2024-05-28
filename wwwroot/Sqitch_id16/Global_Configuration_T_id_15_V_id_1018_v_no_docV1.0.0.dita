@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+                <!DOCTYPE task PUBLIC '-//OASIS//DTD DITA Task//EN' '../dtd/task.dtd'>
+                <task id='Global_Configuration_T_id_15_V_id_1018_v_no_docV1.0.0'>
+                    <title>Global Configuration</title>
+                    
+                    <taskbody>
+                        <steps><step>
+                    <cmd>Open your terminal.</cmd>
+                </step><step>
+                    <cmd>If the psql client is not in the path, specify its location: sqitch config --user engine.pg.client /usr/local/pgsql/bin/psql</cmd>
+                </step><step>
+                    <cmd>This command sets the PostgreSQL client for all Sqitch projects you manage on your host.</cmd>
+                </step><step>
+                    <cmd>To configure this setting for all accounts on your host, run: sqitch config --system engine.pg.client /usr/local/pgsql/bin/psql</cmd>
+                </step><step>
+                    <cmd>This will add the values to the global Sqitch configuration file located at sqitch --etc-path/sqitch.conf.</cmd>
+                </step></steps>
+                    </taskbody>
+                </task>
+            

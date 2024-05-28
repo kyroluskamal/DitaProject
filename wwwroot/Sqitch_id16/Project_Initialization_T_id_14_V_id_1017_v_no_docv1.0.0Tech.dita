@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+                <!DOCTYPE task PUBLIC '-//OASIS//DTD DITA Task//EN' '../dtd/task.dtd'>
+                <task id='Project_Initialization_T_id_14_V_id_1017_v_no_docv1.0.0Tech'>
+                    <title>Project Initialization</title>
+                    
+                    <taskbody>
+                        <steps><step>
+                    <cmd>Open your terminal</cmd>
+                </step><step>
+                    <cmd>Run the command: sqitch init widgets --engine pg.</cmd>
+                </step><step>
+                    <cmd>This command initializes a new project named "widgets" configured to manage PostgreSQL databases.</cmd>
+                </step></steps>
+                    </taskbody>
+                </task>
+            
